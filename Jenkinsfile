@@ -36,13 +36,13 @@ pipeline {
                     bat """
                         echo Checking for repository files...
                        
-                        if not exist repository\\BuilderUML\\CoffeeJenkins.rep (
-                            echo ERROR: CoffeeJenkins.rep not found!
+                        if not exist repository\\BuilderUML\\JenkinsCoffeeSoap.rep (
+                            echo ERROR: JenkinsCoffeeSoap.rep not found!
                             exit /b 1
                         )
                          
                         echo All repository files found, starting deployment...
-                        npx e2e-bridge-cli deploy repository/BuilderUML/CoffeeJenkins.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
                         
                     """
                 }

@@ -230,7 +230,7 @@ VALUES (<input>
          <ownedMember name="Composites"
                       xmi:id="2071638018|_18_0_6_66e021f_1756408897943_582087_14116"
                       xmi:type="uml:Package">
-            <ownedMember name="CoffeeJenkins"
+            <ownedMember name="JenkinsCoffeeSoap"
                          xmi:id="2071638018|_18_0_6_66e021f_1756408897943_231054_14115"
                          xmi:type="uml:Component">
                <ebp:E2EConfiguration base_Component="2071638018|_18_0_6_66e021f_1756408897943_231054_14115"
