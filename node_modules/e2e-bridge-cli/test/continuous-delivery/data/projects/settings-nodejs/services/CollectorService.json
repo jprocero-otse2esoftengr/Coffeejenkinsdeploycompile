@@ -1,0 +1,23 @@
+{
+  "type": "node",
+  "repository": "CollectorService.rep",
+  "settings": {
+    "interval": 60,
+    "dataReceiver.location.host": [
+      "localhost",
+      {
+        "domain": "local",
+        "node": "prod1",
+        "value": "monitoring.e2ebridge.com"
+      },
+      {
+        "value": "monitoring-s1.e2ebridge.com"
+      },
+      {
+        "label": "test",
+        "value": "monitoring-s2.e2ebridge.com"
+      }
+    ],
+    "dataReceiver.location.port": 12345
+  }
+}

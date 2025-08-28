@@ -1,0 +1,7 @@
+{
+  "nodes": [
+    "linux64dev",
+    "win64dev"
+  ],
+  "solutions": "tik_tok"
+}

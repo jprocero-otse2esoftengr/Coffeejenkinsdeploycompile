@@ -1,0 +1,16 @@
+{
+  "type": "xUML",
+  "repository": "Ticker/Ticker.rep",
+  "deploymentOptions": {
+    "overwrite": true
+  },
+  "preferences": {
+    "automaticStartup": [
+      false,
+      {
+        "node": "localhost",
+        "value": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "xUML",
+  "repository": "CollectorService.rep",
+  "settings": {
+    "Collector_collectInterval": "60",
+    "Collector_dataReceiver": [
+      "localhost",
+      {
+        "domain": "local",
+        "node": "prod1",
+        "value": "monitoring.e2ebridge.com"
+      },
+      {
+        "value": "monitoring-s1.e2ebridge.com"
+      },
+      {
+        "label": "test",
+        "value": "monitoring-s2.e2ebridge.com"
+      }
+    ]
+  }
+}

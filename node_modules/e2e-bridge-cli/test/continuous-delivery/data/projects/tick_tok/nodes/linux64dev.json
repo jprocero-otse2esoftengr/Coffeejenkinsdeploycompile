@@ -1,0 +1,9 @@
+{
+  "label": [
+    "regtest",
+    "master"
+  ],
+  "location": "linux64dev.e2e.ch",
+  "user": "linux64dev_user",
+  "password": "linux64dev_pw"
+}

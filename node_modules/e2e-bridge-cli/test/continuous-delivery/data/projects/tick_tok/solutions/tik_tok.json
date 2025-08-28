@@ -1,0 +1,9 @@
+{
+  "services": {
+    "master": [
+      "Ticker",
+      "Receiver"
+    ],
+    "slave": "Receiver"
+  }
+}

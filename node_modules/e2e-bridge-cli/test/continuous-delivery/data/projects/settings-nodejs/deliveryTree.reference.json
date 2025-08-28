@@ -1,0 +1,22 @@
+{
+  "local": {
+    "localhost": {
+      "CollectorService": {
+        "name": "CollectorService",
+        "type": "node",
+        "repository": "/repositories/CollectorService.rep",
+        "settings": {
+          "interval": 60,
+          "dataReceiver": {
+            "location": {
+              "host": "localhost",
+              "port": 12345
+            }
+          }
+        },
+        "preferences": {},
+        "deploymentOptions": {}
+      }
+    }
+  }
+}

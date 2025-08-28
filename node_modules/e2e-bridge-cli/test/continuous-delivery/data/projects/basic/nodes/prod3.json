@@ -1,0 +1,8 @@
+{
+  "label": [
+    "slave"
+  ],
+  "location": "prod3.e2ebridge.com",
+  "user": "admin",
+  "password": "admin"
+}

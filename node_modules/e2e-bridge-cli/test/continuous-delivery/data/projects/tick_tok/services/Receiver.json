@@ -1,0 +1,15 @@
+{
+  "type": "node",
+  "repository": "Ticker/Receiver.zip",
+  "settings": {
+    "apiAlias.Location.host": [
+      "${server_hostname}",
+      {
+        "domain": "regtest",
+        "label": "slave",
+        "value": "linux64dev.e2e.ch"
+      }
+    ],
+    "apiAlias.Location.port": 1234
+  }
+}

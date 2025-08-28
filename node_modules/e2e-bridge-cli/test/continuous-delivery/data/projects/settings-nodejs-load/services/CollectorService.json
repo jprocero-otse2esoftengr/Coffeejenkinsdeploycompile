@@ -1,0 +1,19 @@
+{
+  "type": "node",
+  "repository": "CollectorService.rep",
+  "settings": [
+    "default",
+    {
+      "domain": "local",
+      "node": "prod1",
+      "value": "local.prod1"
+    },
+    {
+      "value": "other"
+    },
+    {
+      "label": "test",
+      "value": "test"
+    }
+  ]
+}

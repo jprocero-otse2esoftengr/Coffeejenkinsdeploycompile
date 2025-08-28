@@ -1,0 +1,9 @@
+{
+  "services": {
+    "master": "CoordinatorService",
+    "slave": [
+      "Worker1Service",
+      "Worker2Service"
+    ]
+  }
+}

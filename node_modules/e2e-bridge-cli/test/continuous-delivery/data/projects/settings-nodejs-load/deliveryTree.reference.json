@@ -1,0 +1,16 @@
+{
+  "local": {
+    "localhost": {
+      "CollectorService": {
+        "name": "CollectorService",
+        "type": "node",
+        "repository": "/repositories/CollectorService.rep",
+        "settings": {
+          "configFile": "default"
+        },
+        "preferences": {},
+        "deploymentOptions": {}
+      }
+    }
+  }
+}

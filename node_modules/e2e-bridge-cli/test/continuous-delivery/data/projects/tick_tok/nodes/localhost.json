@@ -1,0 +1,10 @@
+{
+  "label": [
+    "local",
+    "master",
+    "slave"
+  ],
+  "location": "localhost",
+  "user": "local_user",
+  "password": "local_pw"
+}

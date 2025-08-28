@@ -1,0 +1,23 @@
+{
+  "type": "xUML",
+  "repository": "CollectorService.rep",
+  "preferences": {
+    "bridgeServerLogLevel": [
+      "Info",
+      {
+        "node": "localhost",
+        "value": "Debug"
+      }
+    ],
+    "transactionLogLevel": [
+      "None",
+      {
+        "node": "localhost",
+        "value": "IOInternal"
+      }
+    ],
+    "transactionLogRotInterval": "DAILY",
+    "automaticStartup": false,
+    "automaticRestart": false
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "label": [
+    "regtest",
+    "slave"
+  ],
+  "location": "win64dev.e2e.ch",
+  "user": "win64dev_user",
+  "password": "win64dev_pw"
+}
