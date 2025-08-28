@@ -31,7 +31,14 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/jprocero-otse2esoftengr/coffeejenkins1.git',
+                        credentialsId: ''
+                    ]]
+                ])
             }
         }
         stage('Setup') {
@@ -88,7 +95,7 @@ pipeline {
                     """
                 }
             }
-much            post {
+            post {
                 always {
                     junit 'result.xml'
                 }
