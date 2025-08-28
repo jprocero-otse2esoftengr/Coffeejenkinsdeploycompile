@@ -21,7 +21,8 @@ pipeline {
             steps {
                 script {
                     // Get the current commit hash
-                    def currentCommit = bat(script: 'git rev-parse HEAD', returnStdout: true).trim()
+                    def currentCommitOutput = bat(script: 'git rev-parse HEAD', returnStdout: true)
+                    def currentCommit = currentCommitOutput.split('\n').last().trim()
                     echo "Current commit: ${currentCommit}"
                     
                     // Check if this is the first build
@@ -35,14 +36,13 @@ pipeline {
                     def previousCommit = ''
                     try {
                         previousCommit = previousBuild.getEnvironment()['GIT_COMMIT'] ?: ''
-                    } catch (Exception e) {
-                        echo 'Could not get previous commit from Jenkins, checking git history...'
-                        try {
-                            previousCommit = bat(script: 'git rev-parse HEAD~1', returnStdout: true).trim()
-                        } catch (Exception e2) {
-                            echo 'No previous commit found, proceeding with build'
+                        if (previousCommit == '') {
+                            echo 'No previous commit found in Jenkins environment, proceeding with build'
                             return
                         }
+                    } catch (Exception e) {
+                        echo 'Could not get previous commit from Jenkins, proceeding with build'
+                        return
                     }
                     
                     if (previousCommit == currentCommit) {
@@ -53,14 +53,20 @@ pipeline {
                     }
                     
                     // Check for actual file changes
-                    def changes = bat(script: "git diff --name-only ${previousCommit} ${currentCommit}", returnStdout: true).trim()
-                    if (changes == '') {
-                        echo 'No file changes detected since last successful build. Skipping build.'
-                        currentBuild.result = 'SUCCESS'
-                        currentBuild.description = 'No changes - Build skipped'
-                        return
-                    } else {
-                        echo "Changes detected in files: ${changes}"
+                    try {
+                        def changesOutput = bat(script: "git diff --name-only ${previousCommit} ${currentCommit}", returnStdout: true)
+                        def changes = changesOutput.split('\n').findAll { it.trim() != '' && !it.contains('>') && !it.contains('C:\\') }
+                        
+                        if (changes.size() == 0) {
+                            echo 'No file changes detected since last successful build. Skipping build.'
+                            currentBuild.result = 'SUCCESS'
+                            currentBuild.description = 'No changes - Build skipped'
+                            return
+                        } else {
+                            echo "Changes detected in files: ${changes.join(', ')}"
+                        }
+                    } catch (Exception e) {
+                        echo 'Error checking for changes, proceeding with build: ' + e.getMessage()
                     }
                     
                     echo 'Changes detected, proceeding with build...'
