@@ -1,12 +1,7 @@
 #!groovy
 
 pipeline {
-    agent {
-        node {
-            label 'Windows'
-            customWorkspace "workspace/coffeelistJenkins1"
-        }
-    }
+    agent any
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '1'))
