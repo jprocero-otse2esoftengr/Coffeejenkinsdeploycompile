@@ -8,6 +8,10 @@ pipeline {
         disableConcurrentBuilds()
     }
     
+    triggers {
+        pollSCM('H/5 * * * *')  // Poll GitHub every 5 minutes
+    }
+    
     parameters {
         choice(name: 'XUMLC', choices: ['jarfiles/xumlc-7.20.0.jar'], description: 'Location of the xUML Compiler')
         string(name: 'BRIDGE_HOST', defaultValue: 'ec2-52-74-183-0.ap-southeast-1.compute.amazonaws.com', description: 'Bridge host address')
