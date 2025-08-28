@@ -44,6 +44,9 @@ pipeline {
                         npm install -g e2e-bridge-cli
                         echo "Bridge CLI installation completed"
                         
+                        echo "Setting PATH to include npm global packages..."
+                        set PATH=%%PATH%%;%%APPDATA%%\\npm
+                        
                         echo "Verifying Bridge CLI installation..."
                         e2ebridge --help
                         echo "Bridge CLI verification completed"
@@ -67,6 +70,9 @@ pipeline {
             steps {
                 dir('.') {
                     bat """
+                        echo "Setting PATH to include npm global packages..."
+                        set PATH=%%PATH%%;%%APPDATA%%\\npm
+                        
                         echo "Deploying to Bridge..."
                         echo "Deploying BuilderUML service..."
                         e2ebridge deploy repository/BuilderUML/BuilderUML.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
