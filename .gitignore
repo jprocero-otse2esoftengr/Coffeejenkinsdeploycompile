@@ -1,0 +1,40 @@
+# Build artifacts
+*.rep
+*.lrep
+result.xml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jenkins workspace (if running locally)
+workspace/
+
+# Log files
+*.log
+
+# Test results
+test-results/
+reports/
+
+# Bridge CLI cache
+.bridge-cache/
+
+# Java class files
+*.class
+
+# JAR files (except required ones)
+*.jar
+!jarfiles/xumlc-7.20.0.jar
+!jarfiles/RegTestRunner-*.jar

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1"
+         xmlns:ebp="http://e2e.ch/bridge/profile"
+         descriptor="yes"
+         enforcedImport="E2E_BRIDGE_BASE_COMPONENTS|_16_9_1763043c_1334833506675_583751_11200 E2E_BRIDGE_BASE_COMPONENTS|_9_5_1_be002f9_1137677887489_628032_1 E2E_BRIDGE_BASE_COMPONENTS|_9_0_2_24400562_1119882133263_554201_141 E2E_BRIDGE_BASE_COMPONENTS|_9_0_2_24400562_1119864426430_621818_2 E2E_BRIDGE_BASE_COMPONENTS|_14_0_1_32690623_1224514979328_116374_4927 E2E_BRIDGE_BASE_COMPONENTS|_9_5_1_be002f9_1135071988137_920600_2 E2E_BRIDGE_BASE_COMPONENTS|_14_0_1_32690623_1227865759515_297406_5256 E2E_BRIDGE_BASE_COMPONENTS|_14_0_b2002db_1195030989033_702066_2836 E2E_BRIDGE_BASE_COMPONENTS|_16_0_1_32690623_1238768448406_311491_4401 E2E_BRIDGE_BASE_COMPONENTS|_12_0_24400562_1172493862659_508204_814 E2E_BRIDGE_BASE_COMPONENTS|_16_9_1c8504c0_1448278243483_527883_14042 E2E_BRIDGE_BASE_COMPONENTS|_16_9_1c8504c0_1448278256610_632842_14047"
+         fileid="2071638018"
+         xmi:version="2.1"
+         xmifile.id="2071638018">
+   <xmi:Documentation>
+      <xmi:exporter>MagicDraw UML</xmi:exporter>
+      <xmi:exporterVersion>18.0</xmi:exporterVersion>
+   </xmi:Documentation>
+   <uml:Model xmlns:uml="http://schema.omg.org/spec/UML/2.0" name="Data"
+              xmi:id="2071638018|ROOT_MODEL_XMI.ID"
+              xmi:type="uml:Model">
+      <ownedComment body="&lt;html&gt;&#xA;&lt;head&gt;&#xA;&lt;/head&gt;&#xA;&lt;body&gt;&#xA;&lt;h2&gt;Change Log&lt;/h2&gt;&#xA;&lt;table class=&#34;table&#34;&gt;&#xA;    &lt;tr&gt;&#xA;        &lt;th&gt;Date&lt;/th&gt;&#xA;        &lt;th&gt;Author&lt;/th&gt;&#xA;        &lt;th&gt;Version&lt;/th&gt;&#xA;        &lt;th&gt;Implementation&lt;/th&gt;&#xA;        &lt;th&gt;Note&lt;/th&gt;&#xA;    &lt;/tr&gt;&#xA;    &lt;tr&gt;&#xA;        &lt;td&gt;&lt;/td&gt;&#xA;        &lt;td&gt;&lt;/td&gt;&#xA;        &lt;td&gt;&lt;/td&gt;&#xA;        &lt;td&gt;&lt;/td&gt;&#xA;        &lt;td&gt;&lt;/td&gt;&#xA;    &lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;&lt;/body&gt;&#xA;&lt;/html&gt;"/>
+      <ownedMember name="Services" xmi:id="2071638018|_18_0_6_66e021f_1756406375601_525812_13807"
+                   xmi:type="uml:Package">
+         <ownedMember name="NameOfService1"
+                      xmi:id="2071638018|_18_0_6_66e021f_1756406375603_992041_13849"
+                      xmi:type="uml:Package">
+            <ownedMember name="Classes" xmi:id="2071638018|_18_0_6_66e021f_1756406375604_110873_13856"
+                         xmi:type="uml:Package">
+               <ownedMember name="coffee" xmi:id="2071638018|_18_0_6_66e021f_1756406887410_975431_13871"
+                            xmi:type="uml:Class">
+                  <ebp:umlNamespace value="urn:Services.NameOfService1.Classes"/>
+                  <ownedAttribute name="id"
+                                  type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer"
+                                  visibility="public"
+                                  xmi:id="2071638018|_18_0_6_66e021f_1756406997290_227497_13872"
+                                  xmi:type="uml:Property"/>
+                  <ownedAttribute name="name"
+                                  type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String"
+                                  visibility="public"
+                                  xmi:id="2071638018|_18_0_6_66e021f_1756407052020_215375_13873"
+                                  xmi:type="uml:Property"/>
+                  <ownedAttribute name="description"
+                                  type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String"
+                                  visibility="public"
+                                  xmi:id="2071638018|_18_0_6_66e021f_1756407143296_518641_13874"
+                                  xmi:type="uml:Property"/>
+                  <ownedAttribute name="price"
+                                  type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer"
+                                  visibility="public"
+                                  xmi:id="2071638018|_18_0_6_66e021f_1756407205320_413396_13875"
+                                  xmi:type="uml:Property"/>
+                  <ownedAttribute name="category"
+                                  type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String"
+                                  visibility="public"
+                                  xmi:id="2071638018|_18_0_6_66e021f_1756407276145_188777_13876"
+                                  xmi:type="uml:Property"/>
+                  <ownedAttribute name="available"
+                                  type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Boolean"
+                                  visibility="public"
+                                  xmi:id="2071638018|_18_0_6_66e021f_1756407319669_766150_13877"
+                                  xmi:type="uml:Property"/>
+               </ownedMember>
+            </ownedMember>
+            <ownedMember name="NameOfPortType1"
+                         xmi:id="2071638018|_18_0_6_66e021f_1756406375601_334634_13804"
+                         xmi:type="uml:Package">
+               <ownedMember name="NameOfPortType1"
+                            xmi:id="2071638018|_18_0_6_66e021f_1756406375603_553752_13848"
+                            xmi:type="uml:Class">
+                  <ebp:umlNamespace value="urn:Services.NameOfService1.NameOfPortType1"/>
+                  <ebp:E2ESOAPPortType base_Class="2071638018|_18_0_6_66e021f_1756406375603_553752_13848"
+                                       xmi:id="2071638018|_18_0_6_66e021f_1756406375602_372107_13820"/>
+                  <ownedComment body="[Add documentation here]"/>
+                  <ownedBehavior isReentrant="false" name="Implementation of Operation 1"
+                                 specification="2071638018|_18_0_6_66e021f_1756406375603_177262_13853"
+                                 xmi:id="2071638018|_18_0_6_66e021f_1756406375602_491423_13830"
+                                 xmi:type="uml:Activity">
+                     <ownedParameter name="coffeeClass" type="2071638018|_18_0_6_66e021f_1756406887410_975431_13871"
+                                     visibility="public"
+                                     xmi:id="2071638018|_18_0_6_66e021f_1756407799865_946716_13883"
+                                     xmi:type="uml:Parameter"/>
+                     <edge source="2071638018|_18_0_6_66e021f_1756407845436_661506_13963"
+                           target="2071638018|_18_0_6_66e021f_1756406375602_845242_13842"
+                           visibility="public"
+                           xmi:id="2071638018|_18_0_6_66e021f_1756406375603_975724_13854"
+                           xmi:type="uml:ControlFlow"/>
+                     <edge source="2071638018|_18_0_6_66e021f_1756406375602_340597_13815"
+                           target="2071638018|_18_0_6_66e021f_1756407845436_661506_13963"
+                           visibility="public"
+                           xmi:id="2071638018|_18_0_6_66e021f_1756407849502_114977_13975"
+                           xmi:type="uml:ControlFlow">
+                        <weight value="1" xmi:id="2071638018|_18_0_6_66e021f_1756407849504_507812_13976"
+                                xmi:type="uml:LiteralUnlimitedNatural"/>
+                     </edge>
+                     <edge source="2071638018|_18_0_6_66e021f_1756407799897_961237_13890"
+                           target="2071638018|_18_0_6_66e021f_1756407845436_661506_13963"
+                           visibility="public"
+                           xmi:id="2071638018|_18_0_6_66e021f_1756408270833_970952_14006"
+                           xmi:type="uml:ObjectFlow">
+                        <weight value="1" xmi:id="2071638018|_18_0_6_66e021f_1756408270834_504908_14007"
+                                xmi:type="uml:LiteralUnlimitedNatural"/>
+                     </edge>
+                     <node name="Start" visibility="public"
+                           xmi:id="2071638018|_18_0_6_66e021f_1756406375602_340597_13815"
+                           xmi:type="uml:InitialNode">
+                        <outgoing xmi:idref="2071638018|_18_0_6_66e021f_1756407849502_114977_13975"/>
+                     </node>
+                     <node name="End" visibility="public"
+                           xmi:id="2071638018|_18_0_6_66e021f_1756406375602_845242_13842"
+                           xmi:type="uml:ActivityFinalNode">
+                        <incoming xmi:idref="2071638018|_18_0_6_66e021f_1756406375603_975724_13854"/>
+                     </node>
+                     <node name="coffeeClass"
+                           parameter="2071638018|_18_0_6_66e021f_1756407799865_946716_13883"
+                           type="2071638018|_18_0_6_66e021f_1756406887410_975431_13871"
+                           visibility="public"
+                           xmi:id="2071638018|_18_0_6_66e021f_1756407799897_961237_13890"
+                           xmi:type="uml:ActivityParameterNode">
+                        <outgoing xmi:idref="2071638018|_18_0_6_66e021f_1756408270833_970952_14006"/>
+                     </node>
+                     <node name="coffeeAliasSQLAdapter" visibility="public"
+                           xmi:id="2071638018|_18_0_6_66e021f_1756407845436_661506_13963"
+                           xmi:type="uml:CallBehaviorAction">
+                        <ebp:SQLAdapter action="execute" alias="2071638018|_18_0_6_66e021f_1756408266048_946435_13981"
+                                        base_Action="2071638018|_18_0_6_66e021f_1756407845436_661506_13963"
+                                        dbType="MySQL"
+                                        prefetchedRecords="10"
+                                        xmi:id="2071638018|_18_0_6_66e021f_1756408266040_817414_13980">
+                           <ebp:SQLStatement>INSERT INTO coffee (available,&#xD;
+	category,&#xD;
+	description,&#xD;
+	id,&#xD;
+	name,&#xD;
+	price)&#xD;
+VALUES (<input>
+                                 <Accessor start="1" startLine="1">
+                                    <AccessorPart start="1" startLine="1">
+                                       <EALName start="1" startLine="1" value="coffeeClass"/>
+                                    </AccessorPart>
+                                    <AccessorPart start="13" startLine="1">
+                                       <EALName start="13" startLine="1" value="available"/>
+                                    </AccessorPart>
+                                 </Accessor>
+                              </input>,&#xD;
+	<input>
+                                 <Accessor start="1" startLine="1">
+                                    <AccessorPart start="1" startLine="1">
+                                       <EALName start="1" startLine="1" value="coffeeClass"/>
+                                    </AccessorPart>
+                                    <AccessorPart start="13" startLine="1">
+                                       <EALName start="13" startLine="1" value="category"/>
+                                    </AccessorPart>
+                                 </Accessor>
+                              </input>,&#xD;
+	<input>
+                                 <Accessor start="1" startLine="1">
+                                    <AccessorPart start="1" startLine="1">
+                                       <EALName start="1" startLine="1" value="coffeeClass"/>
+                                    </AccessorPart>
+                                    <AccessorPart start="13" startLine="1">
+                                       <EALName start="13" startLine="1" value="description"/>
+                                    </AccessorPart>
+                                 </Accessor>
+                              </input>,&#xD;
+	<input>
+                                 <Accessor start="1" startLine="1">
+                                    <AccessorPart start="1" startLine="1">
+                                       <EALName start="1" startLine="1" value="coffeeClass"/>
+                                    </AccessorPart>
+                                    <AccessorPart start="13" startLine="1">
+                                       <EALName start="13" startLine="1" value="id"/>
+                                    </AccessorPart>
+                                 </Accessor>
+                              </input>,&#xD;
+	<input>
+                                 <Accessor start="1" startLine="1">
+                                    <AccessorPart start="1" startLine="1">
+                                       <EALName start="1" startLine="1" value="coffeeClass"/>
+                                    </AccessorPart>
+                                    <AccessorPart start="13" startLine="1">
+                                       <EALName start="13" startLine="1" value="name"/>
+                                    </AccessorPart>
+                                 </Accessor>
+                              </input>,&#xD;
+	<input>
+                                 <Accessor start="1" startLine="1">
+                                    <AccessorPart start="1" startLine="1">
+                                       <EALName start="1" startLine="1" value="coffeeClass"/>
+                                    </AccessorPart>
+                                    <AccessorPart start="13" startLine="1">
+                                       <EALName start="13" startLine="1" value="price"/>
+                                    </AccessorPart>
+                                 </Accessor>
+                              </input>)&#xD;
+</ebp:SQLStatement>
+                        </ebp:SQLAdapter>
+                        <incoming xmi:idref="2071638018|_18_0_6_66e021f_1756407849502_114977_13975"/>
+                        <incoming xmi:idref="2071638018|_18_0_6_66e021f_1756408270833_970952_14006"/>
+                        <outgoing xmi:idref="2071638018|_18_0_6_66e021f_1756406375603_975724_13854"/>
+                     </node>
+                  </ownedBehavior>
+                  <ownedOperation isStatic="true" name="operation1" visibility="public"
+                                  xmi:id="2071638018|_18_0_6_66e021f_1756406375603_177262_13853"
+                                  xmi:type="uml:Operation">
+                     <ebp:SOAPDocumentOperation base_Operation="2071638018|_18_0_6_66e021f_1756406375603_177262_13853"
+                                                xmi:id="2071638018|_18_0_6_66e021f_1756406375602_530462_13832"/>
+                     <method xmi:idref="2071638018|_18_0_6_66e021f_1756406375602_491423_13830"/>
+                     <ownedComment body="[Add documentation here]"/>
+                     <ownedParameter name="coffeeClass" type="2071638018|_18_0_6_66e021f_1756406887410_975431_13871"
+                                     visibility="public"
+                                     xmi:id="2071638018|_18_0_6_66e021f_1756406375602_378063_13812"
+                                     xmi:type="uml:Parameter"/>
+                  </ownedOperation>
+               </ownedMember>
+            </ownedMember>
+         </ownedMember>
+      </ownedMember>
+      <ownedMember name="Aliases" xmi:id="2071638018|_18_0_6_66e021f_1756406375602_110666_13813"
+                   xmi:type="uml:Package">
+         <ownedMember name="SQLAlias" xmi:id="2071638018|_18_0_6_66e021f_1756408266048_946435_13981"
+                      xmi:type="uml:Artifact">
+            <ebp:SQLAlias base_Artifact="2071638018|_18_0_6_66e021f_1756408266048_946435_13981"
+                          charset="utf-8"
+                          connectionPooling="true"
+                          dbConnectionString="54.151.161.17@trainingdb"
+                          dbType="MySQL"
+                          unicodeMode="Platform default"
+                          user="e2euser/Qwer!234"
+                          xmi:id="2071638018|_18_0_6_66e021f_1756408266051_787067_13982"/>
+         </ownedMember>
+      </ownedMember>
+      <ownedMember name="Component View"
+                   xmi:id="2071638018|_18_0_6_66e021f_1756408897909_619460_14082"
+                   xmi:type="uml:Package">
+         <ownedMember name="Composites"
+                      xmi:id="2071638018|_18_0_6_66e021f_1756408897943_582087_14116"
+                      xmi:type="uml:Package">
+            <ownedMember name="CoffeeJenkins"
+                         xmi:id="2071638018|_18_0_6_66e021f_1756408897943_231054_14115"
+                         xmi:type="uml:Component">
+               <ebp:E2EConfiguration base_Component="2071638018|_18_0_6_66e021f_1756408897943_231054_14115"
+                                     category="Training2025"
+                                     classToXMLDefaultRootName="Default"
+                                     controlPort="21171"
+                                     killJVMThreadsOnShutdown="true"
+                                     version="0.0.1"
+                                     wsdlPerService="true"
+                                     xmi:id="2071638018|_18_0_6_66e021f_1756408897944_60250_14118"/>
+               <ownedMember name="BuilderUMLService"
+                            xmi:id="2071638018|_18_0_6_66e021f_1756408928950_546722_14175"
+                            xmi:type="uml:Component">
+                  <ebp:E2ESOAPService authenticationMode="None"
+                                      base_Component="2071638018|_18_0_6_66e021f_1756408928950_546722_14175"
+                                      port="11181"
+                                      xmi:id="2071638018|_18_0_6_66e021f_1756408928951_935770_14176"/>
+                  <realization realizingClassifier="2071638018|_18_0_6_66e021f_1756406375603_553752_13848"
+                               xmi:id="2071638018|_18_0_6_66e021f_1756408928953_212242_14181"
+                               xmi:type="uml:ComponentRealization">
+                     <client xmi:idref="2071638018|_18_0_6_66e021f_1756406375603_553752_13848"/>
+                     <supplier xmi:idref="2071638018|_18_0_6_66e021f_1756408928950_546722_14175"/>
+                     <realizingClassifier xmi:idref="2071638018|_18_0_6_66e021f_1756406375603_553752_13848"/>
+                  </realization>
+               </ownedMember>
+            </ownedMember>
+         </ownedMember>
+         <ownedMember xmi:id="2071638018|_18_0_6_66e021f_1756408897996_656695_14173"
+                      xmi:type="uml:Dependency">
+            <client xmi:idref="2071638018|_18_0_6_66e021f_1756408897943_231054_14115"/>
+            <supplier xmi:idref="2071638018|_18_0_6_66e021f_1756408266048_946435_13981"/>
+         </ownedMember>
+      </ownedMember>
+   </uml:Model>
+</xmi:XMI>

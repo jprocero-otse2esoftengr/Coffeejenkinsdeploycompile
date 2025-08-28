@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testConfiguration>
+    <project name="BuilderUML">
+        <testSuite name="QA Tests/Tests">
+            <description>Regression tests for CoffeeList Jenkins project</description>
+            
+            <!-- Sample test case for BuilderUML service -->
+            <testCase name="testBuilderUMLService">
+                <description>Test the BuilderUML service functionality</description>
+                <service>BuilderUML</service>
+                <operation>testOperation</operation>
+                <input>
+                    <parameter name="testParam" value="testValue"/>
+                </input>
+                <expectedOutput>
+                    <parameter name="result" value="success"/>
+                </expectedOutput>
+            </testCase>
+            
+            <!-- Sample test case for CoffeeJenkins service -->
+            <testCase name="testCoffeeJenkinsService">
+                <description>Test the CoffeeJenkins service functionality</description>
+                <service>CoffeeJenkins</service>
+                <operation>testOperation</operation>
+                <input>
+                    <parameter name="testParam" value="testValue"/>
+                </input>
+                <expectedOutput>
+                    <parameter name="result" value="success"/>
+                </expectedOutput>
+            </testCase>
+        </testSuite>
+    </project>
+</testConfiguration>

@@ -1,0 +1,27 @@
+{
+  "name": "coffeelist-jenkins",
+  "version": "1.0.0",
+  "description": "CoffeeList Jenkins Continuous Delivery Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-bridge-cli": "npm install -g e2e-bridge-cli",
+    "build": "java -jar jarfiles/xumlc-7.20.0.jar -uml uml/BuilderUML.xml",
+    "deploy": "e2ebridge deploy repository/BuilderUML/BuilderUML.rep -h ec2-52-74-183-0.ap-southeast-1.compute.amazonaws.com -u jprocero -P jprocero -o overwrite"
+  },
+  "keywords": [
+    "jenkins",
+    "xuml",
+    "bridge",
+    "continuous-delivery"
+  ],
+  "author": "CoffeeList Team",
+  "license": "MIT",
+  "devDependencies": {
+    "e2e-bridge-cli": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
