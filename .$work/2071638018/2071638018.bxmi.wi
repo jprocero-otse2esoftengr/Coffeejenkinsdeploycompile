@@ -134,9 +134,9 @@ VALUES (<input>
       <ownedMember name="Component View" xmi:id="2071638018|_18_0_6_66e021f_1756408897909_619460_14082" xmi:type="uml:Package">
          <ownedMember name="Composites" xmi:id="2071638018|_18_0_6_66e021f_1756408897943_582087_14116" xmi:type="uml:Package">
             <ownedMember name="JenkinsCoffeeSoap" xmi:id="2071638018|_18_0_6_66e021f_1756408897943_231054_14115" xmi:type="uml:Component">
-               <ebp:E2EConfiguration base_Component="2071638018|_18_0_6_66e021f_1756408897943_231054_14115" category="Training2025" classToXMLDefaultRootName="Default" controlPort="21178" killJVMThreadsOnShutdown="true" version="0.0.1" wsdlPerService="true" xmi:id="2071638018|_18_0_6_66e021f_1756408897944_60250_14118"/>
+               <ebp:E2EConfiguration base_Component="2071638018|_18_0_6_66e021f_1756408897943_231054_14115" category="Training2025" classToXMLDefaultRootName="Default" controlPort="21179" killJVMThreadsOnShutdown="true" version="0.0.1" wsdlPerService="true" xmi:id="2071638018|_18_0_6_66e021f_1756408897944_60250_14118"/>
                <ownedMember name="BuilderUMLService" xmi:id="2071638018|_18_0_6_66e021f_1756408928950_546722_14175" xmi:type="uml:Component">
-                  <ebp:E2ESOAPService authenticationMode="None" base_Component="2071638018|_18_0_6_66e021f_1756408928950_546722_14175" port="11181" xmi:id="2071638018|_18_0_6_66e021f_1756408928951_935770_14176"/>
+                  <ebp:E2ESOAPService authenticationMode="None" base_Component="2071638018|_18_0_6_66e021f_1756408928950_546722_14175" port="11186" xmi:id="2071638018|_18_0_6_66e021f_1756408928951_935770_14176"/>
                   <realization realizingClassifier="2071638018|_18_0_6_66e021f_1756406375603_553752_13848" xmi:id="2071638018|_18_0_6_66e021f_1756408928953_212242_14181" xmi:type="uml:ComponentRealization">
                      <client xmi:idref="2071638018|_18_0_6_66e021f_1756406375603_553752_13848"/>
                      <supplier xmi:idref="2071638018|_18_0_6_66e021f_1756408928950_546722_14175"/>
