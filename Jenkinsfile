@@ -17,6 +17,56 @@ pipeline {
     }
 
     stages {
+        stage('Check Changes') {
+            steps {
+                script {
+                    // Get the current commit hash
+                    def currentCommit = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+                    echo "Current commit: ${currentCommit}"
+                    
+                    // Check if this is the first build
+                    def previousBuild = currentBuild.getPreviousSuccessfulBuild()
+                    if (previousBuild == null) {
+                        echo 'This is the first build. Proceeding with build...'
+                        return
+                    }
+                    
+                    // Get the commit hash from the previous successful build
+                    def previousCommit = ''
+                    try {
+                        previousCommit = previousBuild.getEnvironment()['GIT_COMMIT'] ?: ''
+                    } catch (Exception e) {
+                        echo 'Could not get previous commit from Jenkins, checking git history...'
+                        try {
+                            previousCommit = sh(script: 'git rev-parse HEAD~1', returnStdout: true).trim()
+                        } catch (Exception e2) {
+                            echo 'No previous commit found, proceeding with build'
+                            return
+                        }
+                    }
+                    
+                    if (previousCommit == currentCommit) {
+                        echo 'No changes detected - same commit as last successful build. Skipping build.'
+                        currentBuild.result = 'SUCCESS'
+                        currentBuild.description = 'No changes - Build skipped'
+                        return
+                    }
+                    
+                    // Check for actual file changes
+                    def changes = sh(script: "git diff --name-only ${previousCommit} ${currentCommit}", returnStdout: true).trim()
+                    if (changes == '') {
+                        echo 'No file changes detected since last successful build. Skipping build.'
+                        currentBuild.result = 'SUCCESS'
+                        currentBuild.description = 'No changes - Build skipped'
+                        return
+                    } else {
+                        echo "Changes detected in files: ${changes}"
+                    }
+                    
+                    echo 'Changes detected, proceeding with build...'
+                }
+            }
+        }
         stage('Build') {
             steps {
                 dir('.') {
