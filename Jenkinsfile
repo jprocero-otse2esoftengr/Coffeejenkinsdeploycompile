@@ -8,12 +8,6 @@ pipeline {
         disableConcurrentBuilds()
     }
     
-    // Git repository configuration
-    environment {
-        GIT_REPO_URL = 'https://github.com/jprocero-otse2esoftengr/coffeejenkins1.git'
-        GIT_BRANCH = 'main'
-    }
-    
     parameters {
         choice(name: 'XUMLC', choices: 'jarfiles/xumlc-7.20.0.jar', description: 'Location of the xUML Compiler')
         string(name: 'BRIDGE_HOST', defaultValue: 'ec2-52-74-183-0.ap-southeast-1.compute.amazonaws.com', description: 'Bridge host address')
@@ -23,6 +17,10 @@ pipeline {
     }
     
     environment {
+        // Git repository configuration
+        GIT_REPO_URL = 'https://github.com/jprocero-otse2esoftengr/coffeejenkins1.git'
+        GIT_BRANCH = 'main'
+        
         // Use environment variables to avoid string interpolation warnings
         BRIDGE_HOST_ENV = "${params.BRIDGE_HOST}"
         BRIDGE_PORT_ENV = "${params.BRIDGE_PORT}"
