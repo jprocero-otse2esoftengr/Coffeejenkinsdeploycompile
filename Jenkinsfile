@@ -17,62 +17,6 @@ pipeline {
     }
 
     stages {
-        stage('Check Changes') {
-            steps {
-                script {
-                    // Get the current commit hash
-                    def currentCommitOutput = bat(script: 'git rev-parse HEAD', returnStdout: true)
-                    def currentCommit = currentCommitOutput.split('\n').last().trim()
-                    echo "Current commit: ${currentCommit}"
-                    
-                    // Check if this is the first build
-                    def previousBuild = currentBuild.getPreviousSuccessfulBuild()
-                    if (previousBuild == null) {
-                        echo 'This is the first build. Proceeding with build...'
-                        return
-                    }
-                    
-                    // Get the commit hash from the previous successful build
-                    def previousCommit = ''
-                    try {
-                        previousCommit = previousBuild.getEnvironment()['GIT_COMMIT'] ?: ''
-                        if (previousCommit == '') {
-                            echo 'No previous commit found in Jenkins environment, proceeding with build'
-                            return
-                        }
-                    } catch (Exception e) {
-                        echo 'Could not get previous commit from Jenkins, proceeding with build'
-                        return
-                    }
-                    
-                    if (previousCommit == currentCommit) {
-                        echo 'No changes detected - same commit as last successful build. Skipping build.'
-                        currentBuild.result = 'SUCCESS'
-                        currentBuild.description = 'No changes - Build skipped'
-                        return
-                    }
-                    
-                    // Check for actual file changes
-                    try {
-                        def changesOutput = bat(script: "git diff --name-only ${previousCommit} ${currentCommit}", returnStdout: true)
-                        def changes = changesOutput.split('\n').findAll { it.trim() != '' && !it.contains('>') && !it.contains('C:\\') }
-                        
-                        if (changes.size() == 0) {
-                            echo 'No file changes detected since last successful build. Skipping build.'
-                            currentBuild.result = 'SUCCESS'
-                            currentBuild.description = 'No changes - Build skipped'
-                            return
-                        } else {
-                            echo "Changes detected in files: ${changes.join(', ')}"
-                        }
-                    } catch (Exception e) {
-                        echo 'Error checking for changes, proceeding with build: ' + e.getMessage()
-                    }
-                    
-                    echo 'Changes detected, proceeding with build...'
-                }
-            }
-        }
         stage('Build') {
             steps {
                 dir('.') {
@@ -98,32 +42,7 @@ pipeline {
                         )
                          
                         echo All repository files found, starting deployment...
-                        
-                        echo Attempting to stop any existing bridge processes...
-                        taskkill /f /im node.exe 2>nul || echo No existing node processes found
-                        
-                        echo Waiting for processes to fully terminate...
-                        timeout /t 5 /nobreak >nul
-                        
-                        echo Starting deployment with retry logic...
-                        set MAX_RETRIES=3
-                        set RETRY_COUNT=0
-                        
-                        :retry_deploy
                         npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
-                        if errorlevel 1 (
-                            set /a RETRY_COUNT+=1
-                            if !RETRY_COUNT! lss !MAX_RETRIES! (
-                                echo Deployment failed, retrying in 10 seconds... (Attempt !RETRY_COUNT! of !MAX_RETRIES!)
-                                timeout /t 10 /nobreak >nul
-                                goto retry_deploy
-                            ) else (
-                                echo ERROR: Deployment failed after !MAX_RETRIES! attempts
-                                exit /b 1
-                            )
-                        ) else (
-                            echo Deployment completed successfully
-                        )
                         
                     """
                 }
