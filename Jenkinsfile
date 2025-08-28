@@ -13,6 +13,12 @@ pipeline {
         disableConcurrentBuilds()
     }
     
+    // Git repository configuration
+    environment {
+        GIT_REPO_URL = 'https://github.com/jprocero-otse2esoftengr/coffeejenkins1.git'
+        GIT_BRANCH = 'main'
+    }
+    
     parameters {
         choice(name: 'XUMLC', choices: 'jarfiles/xumlc-7.20.0.jar', description: 'Location of the xUML Compiler')
         choice(name: 'REGTEST', choices: 'D:/jenkins/userContent/RegTestRunner/RegTestRunner-nightly.jar', description: 'Location of the Regression Test Runner')
@@ -23,6 +29,11 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Setup') {
             steps {
                 dir('.') {
