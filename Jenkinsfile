@@ -42,12 +42,49 @@ pipeline {
                         )
                          
                         echo All repository files found, starting deployment...
+                        
+                        echo Attempting to stop any existing bridge processes...
+                        taskkill /f /im node.exe 2>nul || echo No existing node processes found
+                        
+                        echo Waiting for processes to fully terminate...
+                        timeout /t 5 /nobreak >nul
+                        
+                        echo Starting deployment with retry logic...
+                        set MAX_RETRIES=3
+                        set RETRY_COUNT=0
+                        
+                        :retry_deploy
                         npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        if errorlevel 1 (
+                            set /a RETRY_COUNT+=1
+                            if !RETRY_COUNT! lss !MAX_RETRIES! (
+                                echo Deployment failed, retrying in 10 seconds... (Attempt !RETRY_COUNT! of !MAX_RETRIES!)
+                                timeout /t 10 /nobreak >nul
+                                goto retry_deploy
+                            ) else (
+                                echo ERROR: Deployment failed after !MAX_RETRIES! attempts
+                                exit /b 1
+                            )
+                        ) else (
+                            echo Deployment completed successfully
+                        )
                         
                     """
                 }
             }
+            }
+    
+    post {
+        always {
+            echo 'Cleaning up deployment processes...'
+            bat 'taskkill /f /im node.exe 2>nul || echo Cleanup completed'
         }
-
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed. Check the logs for details.'
+        }
     }
+}
 }
