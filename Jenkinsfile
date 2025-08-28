@@ -78,7 +78,14 @@ pipeline {
     post {
         always {
             echo 'Cleaning up deployment processes...'
-            bat 'taskkill /f /im node.exe 2>nul || echo Cleanup completed'
+            script {
+                try {
+                    bat 'taskkill /f /im node.exe 2>nul'
+                    echo 'Processes killed successfully'
+                } catch (Exception e) {
+                    echo 'No processes to kill or cleanup completed'
+                }
+            }
         }
         success {
             echo 'Pipeline completed successfully!'
