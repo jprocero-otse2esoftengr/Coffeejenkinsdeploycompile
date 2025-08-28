@@ -36,10 +36,7 @@ pipeline {
                 dir('.') {
                     bat """
                         echo Checking for repository files...
-                        if not exist repository\\BuilderUML\\BuilderUML.rep (
-                            echo ERROR: BuilderUML.rep not found!
-                            exit /b 1
-                        )
+                       
                         if not exist repository\\BuilderUML\\CoffeeJenkins.rep (
                             echo ERROR: CoffeeJenkins.rep not found!
                             exit /b 1
