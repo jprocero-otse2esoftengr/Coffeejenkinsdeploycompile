@@ -32,9 +32,9 @@ pipeline {
             steps {
                 dir('.') {
                     bat """
-                        npx e2e-bridge-cli deploy repository/BuilderUML/BuilderUML.rep --host ${BRIDGE_HOST} --username ${BRIDGE_USER} --password ${BRIDGE_PASSWORD} --overwrite
-                        npx e2e-bridge-cli deploy repository/BuilderUML/CoffeeJenkins.rep --host ${BRIDGE_HOST} --username ${BRIDGE_USER} --password ${BRIDGE_PASSWORD} --overwrite
-                        npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffee.rep --host ${BRIDGE_HOST} --username ${BRIDGE_USER} --password ${BRIDGE_PASSWORD} --overwrite
+                        npx e2e-bridge-cli deploy repository/BuilderUML/BuilderUML.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        npx e2e-bridge-cli deploy repository/BuilderUML/CoffeeJenkins.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffee.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
                     """
                 }
             }
