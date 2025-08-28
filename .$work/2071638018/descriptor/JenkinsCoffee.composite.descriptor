@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Deployment name="CoffeeJenkins">
+<Deployment name="JenkinsCoffee">
    <Configurations>
       <Configuration category="Training2025" classToXMLDefaultRootName="Default"
                      classifierID="2071638018|_18_0_6_66e021f_1756408897943_231054_14115"
-                     classifierName="CoffeeJenkins"
+                     classifierName="JenkinsCoffee"
                      control="${global_e2e_configuration_controller_Port}"
                      host="localhost"
                      id="2071638018|_18_0_6_66e021f_1756408897943_231054_14115"
-                     name="CoffeeJenkins"
+                     name="JenkinsCoffee"
                      umlLocation="2071638018|ROOT_MODEL_XMI.ID~2071638018|_18_0_6_66e021f_1756408897909_619460_14082~2071638018|_18_0_6_66e021f_1756408897943_582087_14116~2071638018|_18_0_6_66e021f_1756408897943_231054_14115"
                      version="0.0.1">
          <PersistentStateConfiguration>
@@ -18,25 +18,25 @@
             <Substitutions>
                <Substitute default="2" label="Persistent State: WorkerLimit: "
                            variableName="ALIAS_Persistent State_WorkerLimit"/>
-               <Substitute default="CoffeeJenkins" label="Persistent State: Owner: "
+               <Substitute default="JenkinsCoffee" label="Persistent State: Owner: "
                            variableName="ALIAS_Persistent State_Owner"/>
             </Substitutions>
          </PersistentStateConfiguration>
          <GlobalSAPSettings DefaultConnectionPoolSize="10" FieldPadding="NEVER" ServerWorkerThreads="1"/>
          <CompilerInformation>
-            <BuildTime millis="1756412060263">Fri, Aug 29, 2025, 04:14:20 SGT</BuildTime>
+            <BuildTime millis="1756412212278">Fri, Aug 29, 2025, 04:16:52 SGT</BuildTime>
             <Compiler version="7.4.0"/>
             <Builder runtime="2019.3" version="7.4.0"/>
          </CompilerInformation>
          <Services>
             <Service authenticationMode="None"
-                     externalURL="http://${wsdl_host_urn:Component_View.Composites.CoffeeJenkins.BuilderUMLService}:${addOn_SEI_HTTP_Service_BuilderUMLService_Port}"
+                     externalURL="http://${wsdl_host_urn:Component_View.Composites.JenkinsCoffee.BuilderUMLService}:${addOn_SEI_HTTP_Service_BuilderUMLService_Port}"
                      id="2071638018|_18_0_6_66e021f_1756408928950_546722_14175"
                      instanceName="BuilderUMLService"
                      label="BuilderUMLService:BuilderUMLService"
                      name="BuilderUMLService"
                      namespace="urn:Component_View.Composites"
-                     package="Component_View.Composites.CoffeeJenkins"
+                     package="Component_View.Composites.JenkinsCoffee"
                      port="${addOn_SEI_HTTP_Service_BuilderUMLService_Port}"
                      protocol="http"
                      stereotype="E2ESOAPService"

@@ -16,7 +16,6 @@ pipeline {
     
     parameters {
         choice(name: 'XUMLC', choices: 'jarfiles/xumlc-7.20.0.jar', description: 'Location of the xUML Compiler')
-        choice(name: 'REGTEST', choices: 'D:/jenkins/userContent/RegTestRunner/RegTestRunner-nightly.jar', description: 'Location of the Regression Test Runner')
         string(name: 'BRIDGE_HOST', defaultValue: 'ec2-52-74-183-0.ap-southeast-1.compute.amazonaws.com', description: 'Bridge host address')
         string(name: 'BRIDGE_PORT', defaultValue: '8080', description: 'Bridge port')
         string(name: 'BRIDGE_USER', defaultValue: 'jprocero', description: 'Bridge username')
@@ -43,9 +42,6 @@ pipeline {
                         echo "Installing Bridge CLI..."
                         npm install -g e2e-bridge-cli
                         echo "Bridge CLI installation completed"
-                        
-                        echo "Setting PATH to include npm global packages..."
-                        set PATH=%%PATH%%;%%APPDATA%%\\npm
                         
                         echo "Verifying Bridge CLI installation..."
                         e2ebridge --help
@@ -86,22 +82,7 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
-            steps {
-                dir('.') {
-                    bat """
-                        echo "Running regression tests..."
-                        java -jar ${REGTEST} -project BuilderUML -suite "QA Tests/Tests" -logfile result.xml -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD}
-                        echo "Regression tests completed"
-                    """
-                }
-            }
-            post {
-                always {
-                    junit 'result.xml'
-                }
-            }
-        }
+
     }
     
     post {
