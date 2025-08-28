@@ -40,13 +40,10 @@ pipeline {
                             echo ERROR: CoffeeJenkins.rep not found!
                             exit /b 1
                         )
-                        if not exist repository\\BuilderUML\\JenkinsCoffee.rep (
-                            echo ERROR: JenkinsCoffee.rep not found!
-                            exit /b 1
-                        )
+                         
                         echo All repository files found, starting deployment...
                         npx e2e-bridge-cli deploy repository/BuilderUML/CoffeeJenkins.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
-                        npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffee.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        
                     """
                 }
             }
