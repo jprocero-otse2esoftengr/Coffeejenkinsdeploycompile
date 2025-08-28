@@ -2,7 +2,7 @@
 <project>
    <generic>
       <author type="java.lang.String">jproc</author>
-      <name type="java.lang.String">coffeelistJenkins1</name>
+      <name type="java.lang.String">coffeelistJenkins1git</name>
       <description type="java.lang.String"/>
       <repository type="java.io.File">repository</repository>
    </generic>
