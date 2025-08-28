@@ -21,6 +21,14 @@ pipeline {
         string(name: 'BRIDGE_USER', defaultValue: 'jprocero', description: 'Bridge username')
         password(name: 'BRIDGE_PASSWORD', defaultValue: 'jprocero', description: 'Bridge password')
     }
+    
+    environment {
+        // Use environment variables to avoid string interpolation warnings
+        BRIDGE_HOST_ENV = "${params.BRIDGE_HOST}"
+        BRIDGE_PORT_ENV = "${params.BRIDGE_PORT}"
+        BRIDGE_USER_ENV = "${params.BRIDGE_USER}"
+        BRIDGE_PASSWORD_ENV = "${params.BRIDGE_PASSWORD}"
+    }
 
     stages {
         stage('Checkout') {
@@ -66,18 +74,40 @@ pipeline {
             steps {
                 dir('.') {
                     bat """
-                        echo "Setting PATH to include npm global packages..."
-                        set PATH=%%PATH%%;%%APPDATA%%\\npm
+                        echo "Finding Bridge CLI installation..."
+                        where e2ebridge
+                        if %%ERRORLEVEL%% NEQ 0 (
+                            echo "Bridge CLI not found in PATH, trying npm global location..."
+                            set BRIDGE_CLI=%%APPDATA%%\\npm\\e2ebridge.cmd
+                            if exist "%%BRIDGE_CLI%%" (
+                                echo "Found Bridge CLI at: %%BRIDGE_CLI%%"
+                            ) else (
+                                echo "Bridge CLI not found, trying alternative locations..."
+                                set BRIDGE_CLI=%%APPDATA%%\\npm\\e2ebridge
+                            )
+                        ) else (
+                            set BRIDGE_CLI=e2ebridge
+                        )
                         
-                        echo "Deploying to Bridge..."
+                        echo "Deploying to Bridge API..."
                         echo "Deploying BuilderUML service..."
-                        e2ebridge deploy repository/BuilderUML/BuilderUML.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        "%%BRIDGE_CLI%%" deploy repository/BuilderUML/BuilderUML.rep -h %BRIDGE_HOST_ENV% -u %BRIDGE_USER_ENV% -P %BRIDGE_PASSWORD_ENV% -o overwrite -o startup
+                        if %%ERRORLEVEL%% NEQ 0 (
+                            echo "Deployment failed for BuilderUML service"
+                            exit /b 1
+                        )
+                        
                         echo "Deploying CoffeeJenkins service..."
-                        e2ebridge deploy repository/BuilderUML/CoffeeJenkins.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
-                        echo "Deployment completed"
+                        "%%BRIDGE_CLI%%" deploy repository/BuilderUML/CoffeeJenkins.rep -h %BRIDGE_HOST_ENV% -u %BRIDGE_USER_ENV% -P %BRIDGE_PASSWORD_ENV% -o overwrite -o startup
+                        if %%ERRORLEVEL%% NEQ 0 (
+                            echo "Deployment failed for CoffeeJenkins service"
+                            exit /b 1
+                        )
+                        
+                        echo "Deployment completed successfully!"
                         
                         echo "Verifying deployed services..."
-                        e2ebridge services -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD}
+                        "%%BRIDGE_CLI%%" services -h %BRIDGE_HOST_ENV% -u %BRIDGE_USER_ENV% -P %BRIDGE_PASSWORD_ENV%
                     """
                 }
             }
