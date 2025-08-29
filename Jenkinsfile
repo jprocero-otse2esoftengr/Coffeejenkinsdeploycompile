@@ -75,11 +75,38 @@ pipeline {
                         echo "Bridge Host: ${params.BRIDGE_HOST}:${params.BRIDGE_PORT}"
                         echo "Test Command: ${testCommand}"
                         
+                        // Check if test files exist
                         bat """
+                            echo Checking for test files...
+                            if exist testsuite.xml (
+                                echo testsuite.xml found
+                            ) else (
+                                echo ERROR: testsuite.xml not found!
+                                exit /b 1
+                            )
+                            
+                            if exist ${params.REGTEST} (
+                                echo Regression test jar found: ${params.REGTEST}
+                            ) else (
+                                echo ERROR: Regression test jar not found: ${params.REGTEST}
+                                exit /b 1
+                            )
+                        """
+                        
+                        // Run the test command with better error handling
+                        bat """
+                            echo Running regression tests...
                             ${testCommand}
                             
                             if errorlevel 1 (
-                                echo Regression tests failed!
+                                echo Regression tests failed with error code %errorlevel%
+                                echo Checking if test results file was created...
+                                if exist test-results.xml (
+                                    echo test-results.xml was created
+                                    type test-results.xml
+                                ) else (
+                                    echo test-results.xml was NOT created
+                                )
                                 exit /b 1
                             ) else (
                                 echo Regression tests completed successfully
@@ -91,9 +118,15 @@ pipeline {
             post {
                 always {
                     echo 'Publishing test results...'
-                    junit 'test-results.xml'
-                    archiveArtifacts artifacts: 'test-results.xml', allowEmptyArchive: true
-                    archiveArtifacts artifacts: 'regressiontest/**/*', allowEmptyArchive: true
+                    script {
+                        if (fileExists('test-results.xml')) {
+                            junit 'test-results.xml'
+                            archiveArtifacts artifacts: 'test-results.xml', allowEmptyArchive: true
+                        } else {
+                            echo 'No test results file found, skipping JUnit publishing'
+                        }
+                        archiveArtifacts artifacts: 'regressiontest/**/*', allowEmptyArchive: true
+                    }
                 }
                 success {
                     echo 'All regression tests passed!'
