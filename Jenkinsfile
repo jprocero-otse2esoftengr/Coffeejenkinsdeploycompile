@@ -63,10 +63,10 @@ pipeline {
                         def testCommand = ""
                         if (params.TEST_SUITE == 'All Tests') {
                             // Run all tests using the main testsuite.xml file
-                            testCommand = "java -jar ${params.REGTEST} -project ${params.TEST_PROJECT} -testsuite testsuite.xml -logfile test-results.xml -host ${params.BRIDGE_HOST} -port ${params.BRIDGE_PORT} -username ${params.BRIDGE_USER} -password ${params.BRIDGE_PASSWORD}"
+                            testCommand = "java -cp ${params.REGTEST} com.scheerpas.bridge.regtest.RegTestRunner -project ${params.TEST_PROJECT} -testsuite testsuite.xml -logfile test-results.xml -host ${params.BRIDGE_HOST} -port ${params.BRIDGE_PORT} -username ${params.BRIDGE_USER} -password ${params.BRIDGE_PASSWORD}"
                         } else {
                             // Run specific test suite
-                            testCommand = "java -jar ${params.REGTEST} -project ${params.TEST_PROJECT} -suite \"${params.TEST_SUITE}\" -logfile test-results.xml -host ${params.BRIDGE_HOST} -port ${params.BRIDGE_PORT} -username ${params.BRIDGE_USER} -password ${params.BRIDGE_PASSWORD}"
+                            testCommand = "java -cp ${params.REGTEST} com.scheerpas.bridge.regtest.RegTestRunner -project ${params.TEST_PROJECT} -suite \"${params.TEST_SUITE}\" -logfile test-results.xml -host ${params.BRIDGE_HOST} -port ${params.BRIDGE_PORT} -username ${params.BRIDGE_USER} -password ${params.BRIDGE_PASSWORD}"
                         }
                         
                         echo "Starting regression tests..."
@@ -87,6 +87,8 @@ pipeline {
                             
                             if exist ${params.REGTEST} (
                                 echo Regression test jar found: ${params.REGTEST}
+                                echo Inspecting JAR file contents...
+                                jar tf ${params.REGTEST} | findstr -i "manifest\|main\|regtest"
                             ) else (
                                 echo ERROR: Regression test jar not found: ${params.REGTEST}
                                 exit /b 1
