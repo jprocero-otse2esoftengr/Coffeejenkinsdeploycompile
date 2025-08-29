@@ -13,14 +13,14 @@ pipeline {
     }
     
     parameters {
-        choice(name: 'XUMLC', choices: ['jarfiles/xumlc-7.20.0.jar'], description: 'Location of the xUML Compiler')
-        choice(name: 'REGTEST', choices: ['jarfiles/module.regtest.jar'], description: 'Location of the Regression Test Runner')
+        choice(name: 'XUMLC', choices: 'jarfiles/xumlc-7.20.0.jar', description: 'Location of the xUML Compiler')
+        choice(name: 'REGTEST', choices: 'jarfiles/module.regtest.jar', description: 'Location of the Regression Test Runner')
         string(name: 'BRIDGE_HOST', defaultValue: 'ec2-52-74-183-0.ap-southeast-1.compute.amazonaws.com', description: 'Bridge host address')
         string(name: 'BRIDGE_USER', defaultValue: 'jprocero', description: 'Bridge username')
         password(name: 'BRIDGE_PASSWORD', defaultValue: 'jprocero', description: 'Bridge password')
         string(name: 'BRIDGE_PORT', defaultValue: '8080', description: 'Bridge port')
         string(name: 'TEST_PROJECT', defaultValue: 'BuilderUML', description: 'Project name for regression tests')
-        choice(name: 'TEST_SUITE', choices: ['Build Test', 'QA Tests', 'Dev Tests', 'All Tests'], description: 'Test suite to run')
+        choice(name: 'TEST_SUITE', choices: 'Build Test,QA Tests,Dev Tests,All Tests', description: 'Test suite to run')
     }
 
     stages {
