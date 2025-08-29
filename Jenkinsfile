@@ -12,6 +12,10 @@ pipeline {
         pollSCM('H/5 * * * *')  // Poll GitHub every 5 minutes
     }
     
+    environment {
+        REGTEST_JAR = 'jarfiles/module.regtest.jar'
+    }
+    
     parameters {
         choice(name: 'XUMLC', choices: ['jarfiles/xumlc-7.20.0.jar'], description: 'Location of the xUML Compiler')
         choice(name: 'REGTEST', choices: ['jarfiles/module.regtest.jar'], description: 'Location of the Regression Test Runner')
@@ -58,19 +62,45 @@ pipeline {
                 dir('.') {
                     bat """
                         echo Starting regression tests...
-                        java -jar ${REGTEST} -project BuilderUML -suite "QA Tests/Tests" -logfile result.xml -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD}
+                        echo REGTEST parameter: ${REGTEST}
+                        echo REGTEST_JAR environment: ${REGTEST_JAR}
+                        
+                        set REGTEST_PATH=${REGTEST}
+                        if "%REGTEST_PATH%"=="" set REGTEST_PATH=${REGTEST_JAR}
+                        
+                        echo Using RegTest jar: %REGTEST_PATH%
+                        echo Checking if regtest jar exists...
+                        if not exist "%REGTEST_PATH%" (
+                            echo ERROR: RegTest jar not found at %REGTEST_PATH%
+                            exit /b 1
+                        )
+                        echo RegTest jar found, starting tests...
+                        java -jar "%REGTEST_PATH%" -project BuilderUML -suite "QA Tests/Tests" -logfile result.xml -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD}
                         if errorlevel 1 (
                             echo Tests completed with errors
                             exit /b 1
                         )
                         echo Tests completed successfully
+                        echo Checking if result.xml was created...
+                        if exist result.xml (
+                            echo result.xml found, size:
+                            dir result.xml
+                        ) else (
+                            echo WARNING: result.xml not found
+                        )
                     """
                 }
             }
             post {
                 always {
-                    junit 'result.xml'
-                    archiveArtifacts artifacts: 'result.xml'
+                    script {
+                        if (fileExists('result.xml')) {
+                            junit 'result.xml'
+                            archiveArtifacts artifacts: 'result.xml'
+                        } else {
+                            echo "No test results file found"
+                        }
+                    }
                 }
             }
         }
