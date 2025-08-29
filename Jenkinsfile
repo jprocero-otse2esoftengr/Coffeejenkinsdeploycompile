@@ -88,7 +88,9 @@ pipeline {
                             if exist ${params.REGTEST} (
                                 echo Regression test jar found: ${params.REGTEST}
                                 echo Inspecting JAR file contents...
-                                jar tf ${params.REGTEST} | findstr -i "manifest\|main\|regtest"
+                                jar tf ${params.REGTEST} | findstr -i "manifest"
+                                jar tf ${params.REGTEST} | findstr -i "main"
+                                jar tf ${params.REGTEST} | findstr -i "regtest"
                             ) else (
                                 echo ERROR: Regression test jar not found: ${params.REGTEST}
                                 exit /b 1
