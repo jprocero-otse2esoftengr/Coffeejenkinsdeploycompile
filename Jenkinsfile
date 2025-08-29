@@ -63,19 +63,19 @@ pipeline {
                         def testCommand = ""
                         if (params.TEST_SUITE == 'All Tests') {
                             // Run all tests using the main testsuite.xml file
-                            testCommand = "java -jar ${REGTEST} -project ${TEST_PROJECT} -testsuite testsuite.xml -logfile test-results.xml -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD}"
+                            testCommand = "java -jar ${params.REGTEST} -project ${params.TEST_PROJECT} -testsuite testsuite.xml -logfile test-results.xml -host ${params.BRIDGE_HOST} -port ${params.BRIDGE_PORT} -username ${params.BRIDGE_USER} -password ${params.BRIDGE_PASSWORD}"
                         } else {
                             // Run specific test suite
-                            testCommand = "java -jar ${REGTEST} -project ${TEST_PROJECT} -suite \"${TEST_SUITE}\" -logfile test-results.xml -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD}"
+                            testCommand = "java -jar ${params.REGTEST} -project ${params.TEST_PROJECT} -suite \"${params.TEST_SUITE}\" -logfile test-results.xml -host ${params.BRIDGE_HOST} -port ${params.BRIDGE_PORT} -username ${params.BRIDGE_USER} -password ${params.BRIDGE_PASSWORD}"
                         }
                         
+                        echo "Starting regression tests..."
+                        echo "Project: ${params.TEST_PROJECT}"
+                        echo "Test Suite: ${params.TEST_SUITE}"
+                        echo "Bridge Host: ${params.BRIDGE_HOST}:${params.BRIDGE_PORT}"
+                        echo "Test Command: ${testCommand}"
+                        
                         bat """
-                            echo Starting regression tests...
-                            echo Project: ${TEST_PROJECT}
-                            echo Test Suite: ${TEST_SUITE}
-                            echo Bridge Host: ${BRIDGE_HOST}:${BRIDGE_PORT}
-                            echo Test Command: ${testCommand}
-                            
                             ${testCommand}
                             
                             if errorlevel 1 (
