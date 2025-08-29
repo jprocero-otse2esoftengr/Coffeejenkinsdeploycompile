@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Module-Title: Regression Tests
+Copyright: Copyright © 2001-2021 Scheer PAS. All rights reserved.
+Module-name: regressiontest
+Module-Date: Thu Oct 28 16:37:59 CEST 2021
+Module-Class: ch.e2e.builder.regtest.RegressionTestSuite
+Module-Build: 
+Gradle-Version: 6.3
+Module-ShortTitle: Regression Tests
+Module-Built-By: developer
+Vendor: Scheer PAS
+Module-Version: 7.18.0
+Module-Tab-Order: 3
+
