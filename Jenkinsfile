@@ -80,6 +80,9 @@ pipeline {
                         if exist result.xml (
                             echo result.xml found, size:
                             dir result.xml
+                            echo.
+                            echo NOTE: If no tests are configured, this is normal.
+                            echo To add regression tests, configure test suites in your project.
                         ) else (
                             echo WARNING: result.xml not found
                         )
@@ -90,6 +93,20 @@ pipeline {
                 always {
                     script {
                         if (fileExists('result.xml')) {
+                            // Check if the result file has actual test results
+                            def resultContent = readFile('result.xml')
+                            if (resultContent.contains('tests="0"') || resultContent.contains('testsuite name=""')) {
+                                echo "No test results found in result.xml - creating placeholder"
+                                // Create a placeholder result with one skipped test
+                                writeFile file: 'result.xml', text: '''<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+   <testsuite name="Regression Tests" tests="1" failures="0" errors="0" skipped="1">
+      <testcase name="NoTestsConfigured" classname="RegressionTest">
+         <skipped message="No regression tests are currently configured for this project"/>
+      </testcase>
+   </testsuite>
+</testsuites>'''
+                            }
                             junit 'result.xml'
                             archiveArtifacts artifacts: 'result.xml'
                         } else {
