@@ -236,7 +236,7 @@ VALUES (<input>
                <ebp:E2EConfiguration base_Component="2071638018|_18_0_6_66e021f_1756408897943_231054_14115"
                                      category="Training2025"
                                      classToXMLDefaultRootName="Default"
-                                     controlPort="21188"
+                                     controlPort="21187"
                                      killJVMThreadsOnShutdown="true"
                                      version="0.0.1"
                                      wsdlPerService="true"
