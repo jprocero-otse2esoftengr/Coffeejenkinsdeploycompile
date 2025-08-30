@@ -5226,7 +5226,7 @@
          </ownedMember>
       </ownedMember>
    </uml:Model>
-<XMI_imports><idtable><file id="E2E_BRIDGE_BASE_COMPONENTS" name="E2E Bridge Base.xml" path="C:\Users\jproc\AppData\Local\Temp\xumlc5797945976843628498\E2E Bridge Base.xml"/><file id="E2E_BRIDGE_PROFILE" name="E2E Bridge Profile.xml" path="C:\Users\jproc\AppData\Local\Temp\xumlc5797945976843628498\E2E Bridge Profile.xml"/></idtable><ownedMember name="JMSAcknowledgeModes" xmi:id="E2E_BRIDGE_PROFILE|_9_5_1_b2002db_1159949983687_226741_93" xmi:type="uml:Enumeration"><ebp:errorLocation value="E2E_BRIDGE_PROFILE|GEN_1065094250389_956183_167~E2E_BRIDGE_PROFILE|_9_5_1_b2002db_1159949983687_226741_93"/>
+<XMI_imports><idtable><file id="E2E_BRIDGE_BASE_COMPONENTS" name="E2E Bridge Base.xml" path="C:\Users\jproc\AppData\Local\Temp\xumlc17081017443291955544\E2E Bridge Base.xml"/><file id="E2E_BRIDGE_PROFILE" name="E2E Bridge Profile.xml" path="C:\Users\jproc\AppData\Local\Temp\xumlc17081017443291955544\E2E Bridge Profile.xml"/></idtable><ownedMember name="JMSAcknowledgeModes" xmi:id="E2E_BRIDGE_PROFILE|_9_5_1_b2002db_1159949983687_226741_93" xmi:type="uml:Enumeration"><ebp:errorLocation value="E2E_BRIDGE_PROFILE|GEN_1065094250389_956183_167~E2E_BRIDGE_PROFILE|_9_5_1_b2002db_1159949983687_226741_93"/>
          <ebp:umlNamespace value="urn:uml-enumeration:Add_Ons.JMS"/>
          <ebp:E2ETaggedValueEnumeration base_Enumeration="E2E_BRIDGE_PROFILE|_9_5_1_b2002db_1159949983687_226741_93" type="E2E_BRIDGE_PROFILE|String" xmi:id="E2E_BRIDGE_PROFILE|_9_5_1_b2002db_1159949983687_226741_93_E2ETaggedValueEnumeration"/>
          <ownedLiteral name="Auto" xmi:id="E2E_BRIDGE_PROFILE|_9_5_1_b2002db_1159950021514_871930_95" xmi:type="uml:EnumerationLiteral"/>
