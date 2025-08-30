@@ -8,12 +8,17 @@ pipeline {
         disableConcurrentBuilds()
     }
     
+    environment {
+        REGTEST_JAR = 'jarfiles/RegTestRunner-8.10.5.jar'
+    }
+    
     triggers {
         pollSCM('H/5 * * * *')  // Poll GitHub every 5 minutes
     }
     
     parameters {
         choice(name: 'XUMLC', choices: ['jarfiles/xumlc-7.20.0.jar'], description: 'Location of the xUML Compiler')
+        choice(name: 'REGTEST', choices: ['jarfiles/RegTestRunner-8.10.5.jar'], description: 'Location of the Regression Test Runner')
         string(name: 'BRIDGE_HOST', defaultValue: 'ec2-52-74-183-0.ap-southeast-1.compute.amazonaws.com', description: 'Bridge host address')
         string(name: 'BRIDGE_USER', defaultValue: 'jprocero', description: 'Bridge username')
         password(name: 'BRIDGE_PASSWORD', defaultValue: 'jprocero', description: 'Bridge password')
@@ -57,20 +62,15 @@ pipeline {
                 dir('.') {
                     bat """
                         echo Starting regression tests...
-                        echo REGTEST parameter: ${REGTEST}
-                        echo REGTEST_JAR environment: ${REGTEST_JAR}
+                        echo Using RegTest jar: ${REGTEST_JAR}
                         
-                        set REGTEST_PATH=${REGTEST}
-                        if "%REGTEST_PATH%"=="" set REGTEST_PATH=${REGTEST_JAR}
-                        
-                        echo Using RegTest jar: %REGTEST_PATH%
                         echo Checking if regtest jar exists...
-                        if not exist "%REGTEST_PATH%" (
-                            echo ERROR: RegTest jar not found at %REGTEST_PATH%
+                        if not exist "${REGTEST_JAR}" (
+                            echo ERROR: RegTest jar not found at ${REGTEST_JAR}
                             exit /b 1
                         )
                         echo RegTest jar found, starting tests...
-                        java -jar "%REGTEST_PATH%" -project BuilderUML -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile result.xml
+                        java -jar "${REGTEST_JAR}" -project BuilderUML -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile result.xml
                         if errorlevel 1 (
                             echo Tests completed with errors
                             exit /b 1
