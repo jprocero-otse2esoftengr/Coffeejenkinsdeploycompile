@@ -71,7 +71,22 @@ pipeline {
                             exit /b 1
                         )
                         echo RegTest jar found, starting tests...
-                        java -jar "${REGTEST_JAR}" -project BuilderUML -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile result.xml
+                        echo Running Build Test suite...
+                java -jar "${REGTEST_JAR}" -project BuilderUML -suite "Build Test" -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile build_result.xml
+                
+                echo Running QA Test suite...
+                java -jar "${REGTEST_JAR}" -project BuilderUML -suite "QA Tests" -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile qa_result.xml
+                
+                echo Running Dev Test suite...
+                java -jar "${REGTEST_JAR}" -project BuilderUML -suite "Dev Tests" -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile dev_result.xml
+                
+                echo Merging test results...
+                echo ^<?xml version="1.0" encoding="UTF-8"?^> > result.xml
+                echo ^<testsuites^> >> result.xml
+                if exist build_result.xml type build_result.xml >> result.xml
+                if exist qa_result.xml type qa_result.xml >> result.xml
+                if exist dev_result.xml type dev_result.xml >> result.xml
+                echo ^</testsuites^> >> result.xml
                         if errorlevel 1 (
                             echo Tests completed with errors
                             exit /b 1
@@ -93,8 +108,19 @@ pipeline {
             post {
                 always {
                     script {
+                        // Archive all test result files
+                        if (fileExists('build_result.xml')) {
+                            archiveArtifacts artifacts: 'build_result.xml'
+                        }
+                        if (fileExists('qa_result.xml')) {
+                            archiveArtifacts artifacts: 'qa_result.xml'
+                        }
+                        if (fileExists('dev_result.xml')) {
+                            archiveArtifacts artifacts: 'dev_result.xml'
+                        }
+                        
                         if (fileExists('result.xml')) {
-                            // Check if the result file has actual test results
+                            // Check if the merged result file has actual test results
                             def resultContent = readFile('result.xml')
                             if (resultContent.contains('tests="0"') || resultContent.contains('testsuite name=""')) {
                                 echo "No test results found in result.xml - creating placeholder"
@@ -111,7 +137,7 @@ pipeline {
                             junit 'result.xml'
                             archiveArtifacts artifacts: 'result.xml'
                         } else {
-                            echo "No test results file found"
+                            echo "No merged test results file found"
                         }
                     }
                 }

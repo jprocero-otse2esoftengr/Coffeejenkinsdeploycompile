@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildTest>
+   <testName>BuildCoffeeService</testName>
+   <description>Test that the coffee service builds successfully</description>
+   <input>
+      <coffeeService>
+         <name>Test Coffee Service</name>
+         <version>1.0.0</version>
+         <buildType>release</buildType>
+      </coffeeService>
+      <buildParameters>
+         <compiler>xumlc-7.20.0</compiler>
+         <target>repository</target>
+         <optimization>enabled</optimization>
+      </buildParameters>
+   </input>
+</buildTest>

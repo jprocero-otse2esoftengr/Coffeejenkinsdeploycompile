@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coffeeValidationResult>
+   <testName>CoffeeDataValidation</testName>
+   <status>COMPLETED</status>
+   <testResults>
+      <testResult>
+         <id>1</id>
+         <name>Espresso</name>
+         <validationStatus>PASSED</validationStatus>
+         <errors>0</errors>
+         <warnings>0</warnings>
+      </testResult>
+      <testResult>
+         <id>2</id>
+         <name></name>
+         <validationStatus>FAILED</validationStatus>
+         <errors>1</errors>
+         <errorMessage>Name is required</errorMessage>
+         <warnings>0</warnings>
+      </testResult>
+      <testResult>
+         <id>3</id>
+         <name>Latte</name>
+         <validationStatus>FAILED</validationStatus>
+         <errors>1</errors>
+         <errorMessage>Price must be positive</errorMessage>
+         <warnings>0</warnings>
+      </testResult>
+   </testResults>
+   <summary>
+      <totalTests>3</totalTests>
+      <passed>1</passed>
+      <failed>2</failed>
+      <successRate>33.33%</successRate>
+   </summary>
+</coffeeValidationResult>

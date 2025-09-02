@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcases name="Dev Tests">
+   <property name="source.folder" value="${project.folder}/regressiontest/source"/>
+   <property name="reference.folder" value="${project.folder}/regressiontest/reference"/>
+   <property name="output.folder" value="${project.folder}/regressiontest/.$output"/>
+   <options type="TestcaseCompare">
+      <ignore element="startTime"/>
+      <ignore element="stopTime"/>
+      <ignore attribute="trace:Size"/>
+   </options>
+   <options type="TabfileMergeCompare">
+      <ignore element="BuildTime"/>
+   </options>
+   
+   <!-- Test service deployment -->
+   <testcase name="ServiceDeployment" classname="DevTest">
+      <description>Test that the coffee service deploys successfully to Bridge</description>
+      <input>
+         <file>${source.folder}/deployment_input.xml</file>
+      </input>
+      <expected>
+         <file>${reference.folder}/deployment_expected.xml</file>
+      </expected>
+   </testcase>
+   
+   <!-- Test service connectivity -->
+   <testcase name="ServiceConnectivity" classname="DevTest">
+      <description>Test that the deployed service is accessible</description>
+      <input>
+         <file>${source.folder}/connectivity_input.xml</file>
+      </input>
+      <expected>
+         <file>${reference.folder}/connectivity_expected.xml</file>
+      </expected>
+   </testcase>
+   
+   <!-- Test service integration -->
+   <testcase name="ServiceIntegration" classname="DevTest">
+      <description>Test integration with other services and systems</description>
+      <input>
+         <file>${source.folder}/integration_input.xml</file>
+      </input>
+      <expected>
+         <file>${reference.folder}/integration_expected.xml</file>
+      </expected>
+   </testcase>
+   
+   <!-- Test configuration management -->
+   <testcase name="ConfigurationManagement" classname="DevTest">
+      <description>Test service configuration and preferences</description>
+      <input>
+         <file>${source.folder}/config_input.xml</file>
+      </input>
+      <expected>
+         <file>${reference.folder}/config_expected.xml</file>
+      </expected>
+   </testcase>
+</testcases>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildTestResult>
+   <testName>BuildCoffeeService</testName>
+   <status>SUCCESS</status>
+   <buildOutput>
+      <repositoryFile>JenkinsCoffeeSoap.rep</repositoryFile>
+      <buildTime>2024-01-01T00:00:00Z</buildTime>
+      <compilerVersion>xumlc-7.20.0</compilerVersion>
+      <warnings>0</warnings>
+      <errors>0</errors>
+   </buildOutput>
+   <validation>
+      <syntaxCheck>PASSED</syntaxCheck>
+      <semanticCheck>PASSED</semanticCheck>
+      <dependencyCheck>PASSED</dependencyCheck>
+   </validation>
+</buildTestResult>
