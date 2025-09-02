@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ebp="http://e2e.ch/bridge/profile" descriptor="yes" enforcedImport="E2E_BRIDGE_BASE_COMPONENTS|_16_9_1763043c_1334833506675_583751_11200 E2E_BRIDGE_BASE_COMPONENTS|_9_5_1_be002f9_1137677887489_628032_1 E2E_BRIDGE_BASE_COMPONENTS|_9_0_2_24400562_1119882133263_554201_141 E2E_BRIDGE_BASE_COMPONENTS|_9_0_2_24400562_1119864426430_621818_2 E2E_BRIDGE_BASE_COMPONENTS|_14_0_1_32690623_1224514979328_116374_4927 E2E_BRIDGE_BASE_COMPONENTS|_9_5_1_be002f9_1135071988137_920600_2 E2E_BRIDGE_BASE_COMPONENTS|_14_0_1_32690623_1227865759515_297406_5256 E2E_BRIDGE_BASE_COMPONENTS|_14_0_b2002db_1195030989033_702066_2836 E2E_BRIDGE_BASE_COMPONENTS|_16_0_1_32690623_1238768448406_311491_4401 E2E_BRIDGE_BASE_COMPONENTS|_12_0_24400562_1172493862659_508204_814 E2E_BRIDGE_BASE_COMPONENTS|_16_9_1c8504c0_1448278243483_527883_14042 E2E_BRIDGE_BASE_COMPONENTS|_16_9_1c8504c0_1448278256610_632842_14047" fileid="2071638018" xmi:version="2.1" xmifile.id="2071638018">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ebp="http://e2e.ch/bridge/profile" xmlns:xuml="http://scheer-group.com/xuml" descriptor="yes" enforcedImport="E2E_BRIDGE_BASE_COMPONENTS|_16_9_1763043c_1334833506675_583751_11200 E2E_BRIDGE_BASE_COMPONENTS|_9_5_1_be002f9_1137677887489_628032_1 E2E_BRIDGE_BASE_COMPONENTS|_9_0_2_24400562_1119882133263_554201_141 E2E_BRIDGE_BASE_COMPONENTS|_9_0_2_24400562_1119864426430_621818_2 E2E_BRIDGE_BASE_COMPONENTS|_14_0_1_32690623_1224514979328_116374_4927 E2E_BRIDGE_BASE_COMPONENTS|_9_5_1_be002f9_1135071988137_920600_2 E2E_BRIDGE_BASE_COMPONENTS|_14_0_1_32690623_1227865759515_297406_5256 E2E_BRIDGE_BASE_COMPONENTS|_14_0_b2002db_1195030989033_702066_2836 E2E_BRIDGE_BASE_COMPONENTS|_16_0_1_32690623_1238768448406_311491_4401 E2E_BRIDGE_BASE_COMPONENTS|_12_0_24400562_1172493862659_508204_814 E2E_BRIDGE_BASE_COMPONENTS|_16_9_1c8504c0_1448278243483_527883_14042 E2E_BRIDGE_BASE_COMPONENTS|_16_9_1c8504c0_1448278256610_632842_14047" fileid="2071638018" xmi:version="2.1" xmifile.id="2071638018">
    <xmi:Documentation>
       <xmi:exporter>MagicDraw UML</xmi:exporter>
       <xmi:exporterVersion>18.0</xmi:exporterVersion>
@@ -134,24 +134,908 @@ VALUES (<input>
       <ownedMember name="Component View" xmi:id="2071638018|_18_0_6_66e021f_1756408897909_619460_14082" xmi:type="uml:Package">
          <ownedMember name="Composites" xmi:id="2071638018|_18_0_6_66e021f_1756408897943_582087_14116" xmi:type="uml:Package">
             <ownedMember name="JenkinsCoffeeSoap" xmi:id="2071638018|_18_0_6_66e021f_1756408897943_231054_14115" xmi:type="uml:Component">
-               <ebp:E2EConfiguration base_Component="2071638018|_18_0_6_66e021f_1756408897943_231054_14115" category="Training2025" classToXMLDefaultRootName="Default" controlPort="21189" killJVMThreadsOnShutdown="true" version="0.0.1" wsdlPerService="true" xmi:id="2071638018|_18_0_6_66e021f_1756408897944_60250_14118"/>
+               <ebp:E2EConfiguration base_Component="2071638018|_18_0_6_66e021f_1756408897943_231054_14115" category="Training2025" classToXMLDefaultRootName="Default" controlPort="21190" killJVMThreadsOnShutdown="true" version="0.0.1" wsdlPerService="true" xmi:id="2071638018|_18_0_6_66e021f_1756408897944_60250_14118"/>
+               <nestedClassifier name="xUMLControllerService" visibility="public" xmi:id="__generated_xUML_Ctrl_Service" xmi:type="uml:Component">
+                  <ebp:E2ERESTService _isGeneratedControlPort="true" base_Component="__generated_xUML_Ctrl_Service" port="21190" xmi:id="__generated_xUML_Ctrl_Service_stereotype"/>
+                  <ownedComment body="This is a generated control port service"/>
+                  <realization realizingClassifier="__generated_xUML_Ctrl_Port_class" supplier="__generated_xUML_Ctrl_Service" xmi:id="__generated_xUML_Ctrl_Service_realization" xmi:type="uml:ComponentRealization">
+                     <client xmi:idref="__generated_xUML_Ctrl_Port_class"/>
+                  </realization>
+               </nestedClassifier>
                <ownedMember name="BuilderUMLService" xmi:id="2071638018|_18_0_6_66e021f_1756408928950_546722_14175" xmi:type="uml:Component">
                   <ebp:E2ESOAPService authenticationMode="None" base_Component="2071638018|_18_0_6_66e021f_1756408928950_546722_14175" port="11186" xmi:id="2071638018|_18_0_6_66e021f_1756408928951_935770_14176"/>
-                  <realization realizingClassifier="2071638018|_18_0_6_66e021f_1756406375603_553752_13848" xmi:id="2071638018|_18_0_6_66e021f_1756408928953_212242_14181" xmi:type="uml:ComponentRealization">
+                  <realization realizingClassifier="2071638018|_18_0_6_66e021f_1756406375603_553752_13848" supplier="2071638018|_18_0_6_66e021f_1756408928950_546722_14175" xmi:id="2071638018|_18_0_6_66e021f_1756408928953_212242_14181" xmi:type="uml:ComponentRealization">
                      <client xmi:idref="2071638018|_18_0_6_66e021f_1756406375603_553752_13848"/>
-                     <supplier xmi:idref="2071638018|_18_0_6_66e021f_1756408928950_546722_14175"/>
-                     <realizingClassifier xmi:idref="2071638018|_18_0_6_66e021f_1756406375603_553752_13848"/>
                   </realization>
                </ownedMember>
             </ownedMember>
          </ownedMember>
-         <ownedMember xmi:id="2071638018|_18_0_6_66e021f_1756408897996_656695_14173" xmi:type="uml:Dependency">
+         <ownedMember supplier="2071638018|_18_0_6_66e021f_1756408266048_946435_13981" xmi:id="2071638018|_18_0_6_66e021f_1756408897996_656695_14173" xmi:type="uml:Dependency">
             <client xmi:idref="2071638018|_18_0_6_66e021f_1756408897943_231054_14115"/>
-            <supplier xmi:idref="2071638018|_18_0_6_66e021f_1756408266048_946435_13981"/>
+         </ownedMember>
+      </ownedMember>
+      <ownedMember name="xUML Controller" xmi:id="__generated_xUML_Ctrl_package" xmi:type="uml:Package">
+         <ebp:XMLPackage base_Package="__generated_xUML_Ctrl_package" xmi:id="__generated_xUML_Ctrl_package_xmlPackage" xmlNamespace="http://e2e.ch/bridge/controller"/>
+         <ownedMember name="XUMLControllerError" xmi:id="__generated_xUML_Ctrl_XUMLControllerError_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ebp:RESTError base_Class="__generated_xUML_Ctrl_XUMLControllerError_class" xmi:id="__generated_xUML_Ctrl_XUMLControllerError_RESTError_appliedStereotype"/>
+            <ownedAttribute name="code" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLControllerError_code" xmi:type="uml:Property">
+               <ebp:RESTErrorCode base_Property="__generated_xUML_Ctrl_XUMLControllerError_code" xmi:id="__generated_xUML_Ctrl_XUMLControllerError_code_RESTErrorCode_appliedStereotype"/>
+            </ownedAttribute>
+            <ownedAttribute name="message" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLControllerError_message" xmi:type="uml:Property">
+               <ebp:RESTErrorMessage base_Property="__generated_xUML_Ctrl_XUMLControllerError_message" xmi:id="__generated_xUML_Ctrl_XUMLControllerError_message_RESTErrorMessage_appliedStereotype"/>
+            </ownedAttribute>
+         </ownedMember>
+         <ownedMember name="XUMLTraceConfigurationList" xmi:id="__generated_xUML_Ctrl_XUMLTraceConfigurationList_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="configurations" type="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceConfigurationList_configurations" xmi:type="uml:Property">
+               <lowerValue value="0" xmi:type="uml:LiteralInteger"/>
+               <upperValue value="-1" xmi:type="uml:LiteralUnlimitedNatural"/>
+            </ownedAttribute>
+         </ownedMember>
+         <ownedMember name="XUMLTraceLevel" xmi:id="__generated_xUML_Ctrl_XUMLTraceLevel_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <generalization general="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" xmi:id="__generated_xUML_Ctrl_XUMLTraceLevel_generalization" xmi:type="uml:Generalization">
+               <ebp:E2EValueGeneralization base_Generalization="__generated_xUML_Ctrl_XUMLTraceLevel_generalization" xmi:id="__generated_xUML_Ctrl_XUMLTraceLevel_E2EValueGeneralization">
+                  <ebp:enumeration>none</ebp:enumeration>
+                  <ebp:enumeration>moderate</ebp:enumeration>
+                  <ebp:enumeration>full</ebp:enumeration>
+               </ebp:E2EValueGeneralization>
+            </generalization>
+         </ownedMember>
+         <ownedMember name="XUMLTraceConfiguration" xmi:id="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceConfiguration_classifier" xmi:type="uml:Property"/>
+            <ownedAttribute name="traceLevel" type="__generated_xUML_Ctrl_XUMLTraceLevel_class" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceConfiguration_traceLevel" xmi:type="uml:Property"/>
+            <ownedAttribute name="maxSize" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceConfiguration_maxSize" xmi:type="uml:Property"/>
+            <ownedAttribute name="inspectedActivities" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceConfiguration_inspectedActivities" xmi:type="uml:Property">
+               <lowerValue value="0" xmi:type="uml:LiteralInteger"/>
+               <upperValue value="-1" xmi:type="uml:LiteralUnlimitedNatural"/>
+            </ownedAttribute>
+         </ownedMember>
+         <ownedMember name="XUMLTraceIdentifierList" xmi:id="__generated_xUML_Ctrl_XUMLTraceIdentifierList_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="identifiers" type="__generated_xUML_Ctrl_XUMLTraceIdentifier_class" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceIdentifierList_configurations" xmi:type="uml:Property">
+               <lowerValue value="0" xmi:type="uml:LiteralInteger"/>
+               <upperValue value="-1" xmi:type="uml:LiteralUnlimitedNatural"/>
+            </ownedAttribute>
+         </ownedMember>
+         <ownedMember name="XUMLTraceIdentifier" xmi:id="__generated_xUML_Ctrl_XUMLTraceIdentifier_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceIdentifier_classifier" xmi:type="uml:Property"/>
+            <ownedAttribute name="id" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceIdentifier_id" xmi:type="uml:Property"/>
+            <ownedAttribute name="firstEntry" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/DateTime" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceIdentifier_firstEntry" xmi:type="uml:Property"/>
+            <ownedAttribute name="lastEntry" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/DateTime" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceIdentifier_lastEntry" xmi:type="uml:Property"/>
+            <ownedAttribute name="count" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceIdentifier_count" xmi:type="uml:Property"/>
+            <ownedAttribute name="displayName" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLTraceIdentifier_displayName" xmi:type="uml:Property"/>
+         </ownedMember>
+         <ownedMember name="XUMLPersistentStateEngineInfo" xmi:id="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="database" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_database" xmi:type="uml:Property"/>
+            <ownedAttribute name="databaseLocation" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_databaseLocation" xmi:type="uml:Property"/>
+            <ownedAttribute name="owner" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_owner" xmi:type="uml:Property"/>
+            <ownedAttribute name="workerLimit" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_workerLimit" xmi:type="uml:Property"/>
+            <ownedAttribute name="internalStateDatabaseSynchronization" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_internalStateDatabaseSynchronization" xmi:type="uml:Property"/>
+            <ownedAttribute name="eventSelectionAlgorithm" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_eventSelectionAlgorithm" xmi:type="uml:Property"/>
+            <ownedAttribute name="externalDatabase" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_externalDatabase" xmi:type="uml:Property"/>
+            <ownedAttribute name="externalDatabaseLocation" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_externalDatabaseLocation" xmi:type="uml:Property"/>
+         </ownedMember>
+         <ownedMember name="XUMLServiceStatus" xmi:id="__generated_xUML_Ctrl_XUMLServiceStatus_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="status" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLServiceStatus_status" xmi:type="uml:Property"/>
+         </ownedMember>
+         <ownedMember name="XUMLLogChannel" xmi:id="__generated_xUML_Ctrl_XUMLLogChannel_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="name" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLLogChannel_name" xmi:type="uml:Property"/>
+         </ownedMember>
+         <ownedMember name="XUMLLogChannelList" xmi:id="__generated_xUML_Ctrl_XUMLLogChannelList_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="channels" type="__generated_xUML_Ctrl_XUMLLogChannel_class" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLLogChannelList_channels" xmi:type="uml:Property">
+               <lowerValue value="0" xmi:type="uml:LiteralInteger"/>
+               <upperValue value="-1" xmi:type="uml:LiteralUnlimitedNatural"/>
+            </ownedAttribute>
+         </ownedMember>
+         <ownedMember name="XUMLLogFilterLevel" xmi:id="__generated_xUML_Ctrl_XUMLLogFilterLevel_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <generalization general="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" xmi:id="__generated_xUML_Ctrl_XUMLLogFilterLevel_generalization" xmi:type="uml:Generalization">
+               <ebp:E2EValueGeneralization base_Generalization="__generated_xUML_Ctrl_XUMLLogFilterLevel_generalization" xmi:id="__generated_xUML_Ctrl_XUMLLogFilterLevel_E2EValueGeneralization">
+                  <ebp:enumeration>None</ebp:enumeration>
+                  <ebp:enumeration>Fatal</ebp:enumeration>
+                  <ebp:enumeration>Error</ebp:enumeration>
+                  <ebp:enumeration>Warning</ebp:enumeration>
+                  <ebp:enumeration>Info</ebp:enumeration>
+                  <ebp:enumeration>Debug</ebp:enumeration>
+               </ebp:E2EValueGeneralization>
+            </generalization>
+         </ownedMember>
+         <ownedMember name="XUMLLogFilterTrxLevel" xmi:id="__generated_xUML_Ctrl_XUMLLogFilterTrxLevel_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <generalization general="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" xmi:id="__generated_xUML_Ctrl_XUMLLogFilterTrxLevel_generalization" xmi:type="uml:Generalization">
+               <ebp:E2EValueGeneralization base_Generalization="__generated_xUML_Ctrl_XUMLLogFilterTrxLevel_generalization" xmi:id="__generated_xUML_Ctrl_XUMLLogFilterTrxLevel_E2EValueGeneralization">
+                  <ebp:enumeration>NONE</ebp:enumeration>
+                  <ebp:enumeration>CUSTOM</ebp:enumeration>
+                  <ebp:enumeration>SERVICE</ebp:enumeration>
+                  <ebp:enumeration>IO_EXTERNAL</ebp:enumeration>
+                  <ebp:enumeration>IO_INTERNAL</ebp:enumeration>
+               </ebp:E2EValueGeneralization>
+            </generalization>
+         </ownedMember>
+         <ownedMember name="XUMLLogFilter" xmi:id="__generated_xUML_Ctrl_XUMLLogFilter_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="level" type="__generated_xUML_Ctrl_XUMLLogFilterLevel_class" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLLogFilter_level" xmi:type="uml:Property">
+               <lowerValue value="1" xmi:type="uml:LiteralInteger"/>
+               <upperValue value="-1" xmi:type="uml:LiteralUnlimitedNatural"/>
+            </ownedAttribute>
+            <ownedAttribute name="trx_level" type="__generated_xUML_Ctrl_XUMLLogFilterTrxLevel_class" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLLogFilter_trx_level" xmi:type="uml:Property">
+               <lowerValue value="1" xmi:type="uml:LiteralInteger"/>
+               <upperValue value="-1" xmi:type="uml:LiteralUnlimitedNatural"/>
+            </ownedAttribute>
+            <ownedAttribute name="domains" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLLogFilter_domains" xmi:type="uml:Property">
+               <lowerValue value="1" xmi:type="uml:LiteralInteger"/>
+               <upperValue value="-1" xmi:type="uml:LiteralUnlimitedNatural"/>
+            </ownedAttribute>
+         </ownedMember>
+         <ownedMember name="XUMLLogFilterList" xmi:id="__generated_xUML_Ctrl_XUMLLogFilterList_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="filters" type="__generated_xUML_Ctrl_XUMLLogFilter_class" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLLogFilterList_filters" xmi:type="uml:Property">
+               <lowerValue value="0" xmi:type="uml:LiteralInteger"/>
+               <upperValue value="-1" xmi:type="uml:LiteralUnlimitedNatural"/>
+            </ownedAttribute>
+         </ownedMember>
+         <ownedMember name="XUMLLogSink" xmi:id="__generated_xUML_Ctrl_XUMLLogSink_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="name" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLLogSink_name" xmi:type="uml:Property"/>
+         </ownedMember>
+         <ownedMember name="XUMLLogSinkList" xmi:id="__generated_xUML_Ctrl_XUMLLogSinkList_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ownedAttribute name="sinks" type="__generated_xUML_Ctrl_XUMLLogSink_class" visibility="public" xmi:id="__generated_xUML_Ctrl_XUMLLogSinkList_sinks" xmi:type="uml:Property">
+               <lowerValue value="0" xmi:type="uml:LiteralInteger"/>
+               <upperValue value="-1" xmi:type="uml:LiteralUnlimitedNatural"/>
+            </ownedAttribute>
+         </ownedMember>
+         <ownedMember name="Persistent State classes" xmi:id="__generated_xUML_Ctrl_PersistentStateClasses_tag" xmi:type="uml:Artifact">
+            <ebp:RESTOperationTag base_Artifact="__generated_xUML_Ctrl_PersistentStateClasses_tag" order="30" xmi:id="__generated_xUML_Ctrl_PersistentStateClasses_tag_RESTOperationTag_appliedStereotype"/>
+         </ownedMember>
+         <ownedMember name="Persistent State events" xmi:id="__generated_xUML_Ctrl_PersistentStateEvents_tag" xmi:type="uml:Artifact">
+            <ebp:RESTOperationTag base_Artifact="__generated_xUML_Ctrl_PersistentStateEvents_tag" order="60" xmi:id="__generated_xUML_Ctrl_PersistentStateEvents_RESTOperationTag_appliedStereotype"/>
+         </ownedMember>
+         <ownedMember name="Persistent State objects" xmi:id="__generated_xUML_Ctrl_PersistentStateObjects_tag" xmi:type="uml:Artifact">
+            <ebp:RESTOperationTag base_Artifact="__generated_xUML_Ctrl_PersistentStateObjects_tag" order="40" xmi:id="__generated_xUML_Ctrl_PersistentStateObjects_RESTOperationTag_appliedStereotype"/>
+         </ownedMember>
+         <ownedMember name="Persistent State owners" xmi:id="__generated_xUML_Ctrl_PersistentStateOwners_tag" xmi:type="uml:Artifact">
+            <ebp:RESTOperationTag base_Artifact="__generated_xUML_Ctrl_PersistentStateOwners_tag" order="50" xmi:id="__generated_xUML_Ctrl_PersistentStateOwners_RESTOperationTag_appliedStereotype"/>
+         </ownedMember>
+         <ownedMember name="xUML Service" xmi:id="__generated_xUML_Ctrl_xUMLService_tag" xmi:type="uml:Artifact">
+            <ebp:RESTOperationTag base_Artifact="__generated_xUML_Ctrl_xUMLService_tag" order="10" xmi:id="__generated_xUML_Ctrl_xUMLService_RESTOperationTag_appliedStereotype"/>
+         </ownedMember>
+         <ownedMember name="Logging" xmi:id="__generated_xUML_Ctrl_Logging_tag" xmi:type="uml:Artifact">
+            <ebp:RESTOperationTag base_Artifact="__generated_xUML_Ctrl_Logging_tag" order="20" xmi:id="__generated_xUML_Ctrl_Logging_RESTOperationTag_appliedStereotype"/>
+         </ownedMember>
+         <ownedMember name="Asynchronous Tracing" xmi:id="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Artifact">
+            <ebp:RESTOperationTag base_Artifact="__generated_xUML_Ctrl_AsyncTracing_tag" order="70" xmi:id="__generated_xUML_Ctrl_AsyncTracing_RESTOperationTag_appliedStereotype"/>
+         </ownedMember>
+         <ownedMember name="xUML Runtime API" xmi:id="__generated_xUML_Ctrl_Port_class" xmi:type="uml:Class">
+            <ebp:umlNamespace value="urn:xUML_Controller"/>
+            <ebp:xmlNamespace value="http://e2e.ch/bridge/xuml/controller"/>
+            <ebp:E2ERESTPortType _isGeneratedControlPort="true" apiVersion="1.2.0" base_Class="__generated_xUML_Ctrl_Port_class" errorClass="__generated_xUML_Ctrl_XUMLControllerError_class" path="/api" xmi:id="__generated_xUML_Ctrl_Port_E2ERESTPortType_appliedStereotype"/>
+            <ownedComment body="For more information on the xUML Runtime API, refer to our [online documentation](https://doc.scheer-pas.com/display/BRIDGE/xUML+Runtime+API)."/>
+            <nestedClassifier name="log" xmi:id="__generated_xUML_Ctrl_Port_log_resource" xmi:type="uml:Class">
+               <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller"/>
+               <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+               <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_log_resource" xmi:id="__generated_xUML_Ctrl_Port_log_RESTResource_appliedStereotype"/>
+               <nestedClassifier name="channels" xmi:id="__generated_xUML_Ctrl_Port_log_channels_resource" xmi:type="uml:Class">
+                  <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.log"/>
+                  <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                  <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_log_channels_resource" xmi:id="__generated_xUML_Ctrl_Port_log_channels_RESTResource_appliedStereotype"/>
+                  <nestedClassifier name="channel" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_resource" xmi:type="uml:Class">
+                     <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.log.channels"/>
+                     <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                     <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_log_channels_:channel_resource" relativePath=":channel" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_RESTResource_appliedStereotype"/>
+                     <nestedClassifier name="sinks" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_resource" xmi:type="uml:Class">
+                        <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.log.channels.:channel"/>
+                        <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                        <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_resource" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_RESTResource_appliedStereotype"/>
+                        <nestedClassifier name="sink" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_resource" xmi:type="uml:Class">
+                           <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.log.channels.:channel.sinks"/>
+                           <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                           <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_resource" relativePath=":sink" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_RESTResource_appliedStereotype"/>
+                           <nestedClassifier name="filters" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_resource" xmi:type="uml:Class">
+                              <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.log.channels.:channel.sinks.:sink"/>
+                              <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                              <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_resource" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_RESTResource_appliedStereotype"/>
+                              <nestedClassifier name="filterNum" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_resource" xmi:type="uml:Class">
+                                 <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.log.channels.:channel.sinks.:sink.filters"/>
+                                 <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                                 <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_resource" relativePath=":filterNum" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_RESTResource_appliedStereotype"/>
+                                 <ownedOperation isStatic="true" name="GET" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_operation" xmi:type="uml:Operation">
+                                    <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_Logging_tag" base_Operation="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_REST_appliedStereotype"/>
+                                    <ownedComment body="Retrieve filter from the given sink at the given index."/>
+                                    <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_activity"/>
+                                    <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_channel_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log channel"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_channel_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_channel_parameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_sink_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log sink"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_sink_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_sink_parameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <ownedParameter direction="in" name="filterNum" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filterNum_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Index of the log filter"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filterNum_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filterNum_parameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <ownedParameter direction="out" name="filters" type="__generated_xUML_Ctrl_XUMLLogFilter_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filters_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Filter at the given index."/>
+                                    </ownedParameter>
+                                 </ownedOperation>
+                                 <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_LOG_CHANNEL_SINK_FILTER_GET" name="GET" specification="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_operation" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_activity" xmi:type="uml:Activity">
+                                    <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_channel_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log channel"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_channel_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_channel_activityParameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="channel" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_channel_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_channel_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                    <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_sink_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log sink"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_sink_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_sink_activityParameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="sink" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_sink_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_sink_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                    <ownedParameter direction="in" name="filterNum" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filterNum_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Index of the log filter"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filterNum_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filterNum_activityParameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="filterNum" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filterNum_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filterNum_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                    <ownedParameter direction="out" name="filters" type="__generated_xUML_Ctrl_XUMLLogFilter_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filters_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Filter at the given index."/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="filters" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filters_activityParameter" type="__generated_xUML_Ctrl_XUMLLogFilter_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_filters_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 </ownedMember>
+                                 <ownedOperation isStatic="true" name="PUT" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_operation" xmi:type="uml:Operation">
+                                    <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_Logging_tag" base_Operation="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_operation" httpMethod="PUT" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_REST_appliedStereotype"/>
+                                    <ownedComment body="Change the filter at he given index."/>
+                                    <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_activity"/>
+                                    <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_channel_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log channel"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_channel_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_channel_parameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_sink_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log sink"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_sink_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_sink_parameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <ownedParameter direction="in" name="filterNum" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filterNum_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Index of the log filter"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filterNum_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filterNum_parameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <ownedParameter direction="in" name="filter" type="__generated_xUML_Ctrl_XUMLLogFilter_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filter_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="New filter to replace the current one at given index."/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filter_parameter" in="body" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filter_parameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                 </ownedOperation>
+                                 <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_LOG_CHANNEL_SINK_FILTER_REPLACE" name="PUT" specification="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_operation" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_activity" xmi:type="uml:Activity">
+                                    <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_channel_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log channel"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_channel_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_channel_activityParameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="channel" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_channel_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_channel_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                    <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_sink_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log sink"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_sink_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_sink_activityParameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="sink" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_sink_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_sink_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                    <ownedParameter direction="in" name="filterNum" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filterNum_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Index of the log filter"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filterNum_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filterNum_activityParameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="filterNum" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filterNum_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filterNum_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                    <ownedParameter direction="in" name="filter" type="__generated_xUML_Ctrl_XUMLLogFilter_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filter_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="New filter to replace the current one at given index."/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filter_activityParameter" in="body" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filter_activityParameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="filter" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filter_activityParameter" type="__generated_xUML_Ctrl_XUMLLogFilter_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_filter_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 </ownedMember>
+                                 <ownedOperation isStatic="true" name="DELETE" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_operation" xmi:type="uml:Operation">
+                                    <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_Logging_tag" base_Operation="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_operation" httpMethod="DELETE" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_REST_appliedStereotype"/>
+                                    <ownedComment body="Remove filter at given index."/>
+                                    <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_activity"/>
+                                    <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_channel_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log channel"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_channel_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_channel_parameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_sink_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log sink"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_sink_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_sink_parameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <ownedParameter direction="in" name="filterNum" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_filterNum_parameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Index of the log filter"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_filterNum_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_filterNum_parameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                 </ownedOperation>
+                                 <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_LOG_CHANNEL_SINK_FILTER_DELETE" name="DELETE" specification="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_operation" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_activity" xmi:type="uml:Activity">
+                                    <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_channel_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log channel"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_channel_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_channel_activityParameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="channel" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_channel_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_channel_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                    <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_sink_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Name of the log sink"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_sink_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_sink_activityParameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="sink" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_sink_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_sink_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                    <ownedParameter direction="in" name="filterNum" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_filterNum_activityParameter" xmi:type="uml:Parameter">
+                                       <ownedComment body="Index of the log filter"/>
+                                       <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_filterNum_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_filterNum_activityParameter_REST_appliedStereotype"/>
+                                    </ownedParameter>
+                                    <node _isGeneratedControlPort="true" name="filterNum" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_filterNum_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Integer" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_filterNum_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 </ownedMember>
+                              </nestedClassifier>
+                              <ownedOperation isStatic="true" name="GET/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_operation" xmi:type="uml:Operation">
+                                 <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_Logging_tag" base_Operation="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_REST_appliedStereotype"/>
+                                 <ownedComment body="List filters on a given sink."/>
+                                 <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_activity"/>
+                                 <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_channel_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log channel"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_channel_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_channel_parameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_sink_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log sink"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_sink_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_sink_parameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <ownedParameter direction="out" name="filters" type="__generated_xUML_Ctrl_XUMLLogFilterList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_filters_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="List of filters on a given sink."/>
+                                 </ownedParameter>
+                              </ownedOperation>
+                              <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_LOG_CHANNEL_SINK_FILTERS_GET" name="GET/" specification="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_operation" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_activity" xmi:type="uml:Activity">
+                                 <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_channel_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log channel"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_channel_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_channel_activityParameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="channel" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_channel_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_channel_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_sink_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log sink"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_sink_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_sink_activityParameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="sink" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_sink_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_sink_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 <ownedParameter direction="out" name="filters" type="__generated_xUML_Ctrl_XUMLLogFilterList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_filters_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="List of filters on a given sink."/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="filters" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_filters_activityParameter" type="__generated_xUML_Ctrl_XUMLLogFilterList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_filters_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                              </ownedMember>
+                              <ownedOperation isStatic="true" name="PUT" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_operation" xmi:type="uml:Operation">
+                                 <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_Logging_tag" base_Operation="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_operation" httpMethod="PUT" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_REST_appliedStereotype"/>
+                                 <ownedComment body="Replace all the filters of the given sink."/>
+                                 <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_activity"/>
+                                 <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_channel_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log channel"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_channel_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_channel_parameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_sink_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log sink"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_sink_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_sink_parameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <ownedParameter direction="in" name="filters" type="__generated_xUML_Ctrl_XUMLLogFilterList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_filters_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="New list of filters to apply to a given sink."/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_filters_parameter" in="body" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_filters_parameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                              </ownedOperation>
+                              <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_LOG_CHANNEL_SINK_FILTERS_REPLACE" name="PUT" specification="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_operation" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_activity" xmi:type="uml:Activity">
+                                 <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_channel_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log channel"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_channel_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_channel_activityParameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="channel" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_channel_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_channel_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_sink_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log sink"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_sink_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_sink_activityParameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="sink" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_sink_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_sink_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 <ownedParameter direction="in" name="filters" type="__generated_xUML_Ctrl_XUMLLogFilterList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_filters_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="New list of filters to apply to a given sink."/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_filters_activityParameter" in="body" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_filters_activityParameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="filters" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_filters_activityParameter" type="__generated_xUML_Ctrl_XUMLLogFilterList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_filters_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                              </ownedMember>
+                              <ownedOperation isStatic="true" name="POST/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_operation" xmi:type="uml:Operation">
+                                 <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_Logging_tag" base_Operation="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_operation" httpMethod="POST" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_REST_appliedStereotype"/>
+                                 <ownedComment body="Create new filter."/>
+                                 <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_activity"/>
+                                 <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_channel_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log channel"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_channel_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_channel_parameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_sink_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log sink"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_sink_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_sink_parameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <ownedParameter direction="in" name="filters" type="__generated_xUML_Ctrl_XUMLLogFilter_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_filters_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="New filter to apply to a given sink."/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_filters_parameter" in="body" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_filters_parameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                              </ownedOperation>
+                              <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_LOG_CHANNEL_SINK_FILTER_NEW" name="POST/" specification="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_operation" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_activity" xmi:type="uml:Activity">
+                                 <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_channel_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log channel"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_channel_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_channel_activityParameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="channel" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_channel_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_channel_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 <ownedParameter direction="in" name="sink" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_sink_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Name of the log sink"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_sink_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_sink_activityParameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="sink" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_sink_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_sink_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 <ownedParameter direction="in" name="filters" type="__generated_xUML_Ctrl_XUMLLogFilter_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_filters_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="New filter to apply to a given sink."/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_filters_activityParameter" in="body" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_filters_activityParameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="filters" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_filters_activityParameter" type="__generated_xUML_Ctrl_XUMLLogFilter_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_filters_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                              </ownedMember>
+                           </nestedClassifier>
+                        </nestedClassifier>
+                        <ownedOperation isStatic="true" name="GET/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_operation" xmi:type="uml:Operation">
+                           <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_Logging_tag" base_Operation="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_REST_appliedStereotype"/>
+                           <ownedComment body="List configured sinks of a channel."/>
+                           <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_activity"/>
+                           <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_channel_parameter" xmi:type="uml:Parameter">
+                              <ownedComment body="Name of the log channel"/>
+                              <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_channel_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_channel_parameter_REST_appliedStereotype"/>
+                           </ownedParameter>
+                           <ownedParameter direction="out" name="owners" type="__generated_xUML_Ctrl_XUMLLogSinkList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_owners_parameter" xmi:type="uml:Parameter">
+                              <ownedComment body="List of configured sinks of a channel."/>
+                           </ownedParameter>
+                        </ownedOperation>
+                        <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_LOG_CHANNEL_SINKS_GET" name="GET/" specification="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_operation" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_activity" xmi:type="uml:Activity">
+                           <ownedParameter direction="in" name="channel" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_channel_activityParameter" xmi:type="uml:Parameter">
+                              <ownedComment body="Name of the log channel"/>
+                              <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_channel_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_channel_activityParameter_REST_appliedStereotype"/>
+                           </ownedParameter>
+                           <node _isGeneratedControlPort="true" name="channel" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_channel_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_channel_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                           <ownedParameter direction="out" name="owners" type="__generated_xUML_Ctrl_XUMLLogSinkList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_owners_activityParameter" xmi:type="uml:Parameter">
+                              <ownedComment body="List of configured sinks of a channel."/>
+                           </ownedParameter>
+                           <node _isGeneratedControlPort="true" name="owners" parameter="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_owners_activityParameter" type="__generated_xUML_Ctrl_XUMLLogSinkList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_owners_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                        </ownedMember>
+                     </nestedClassifier>
+                  </nestedClassifier>
+                  <ownedOperation isStatic="true" name="GET/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_GET/_operation" xmi:type="uml:Operation">
+                     <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_Logging_tag" base_Operation="__generated_xUML_Ctrl_Port_log_channels_GET/_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_log_channels_GET/_REST_appliedStereotype"/>
+                     <ownedComment body="List configured log channels."/>
+                     <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_log_channels_GET/_activity"/>
+                     <ownedParameter direction="out" name="channels" type="__generated_xUML_Ctrl_XUMLLogChannelList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_GET/_channels_parameter" xmi:type="uml:Parameter">
+                        <ownedComment body="List of configured log channels."/>
+                     </ownedParameter>
+                  </ownedOperation>
+                  <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_LOG_CHANNELS_GET" name="GET/" specification="__generated_xUML_Ctrl_Port_log_channels_GET/_operation" xmi:id="__generated_xUML_Ctrl_Port_log_channels_GET/_activity" xmi:type="uml:Activity">
+                     <ownedParameter direction="out" name="channels" type="__generated_xUML_Ctrl_XUMLLogChannelList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_GET/_channels_activityParameter" xmi:type="uml:Parameter">
+                        <ownedComment body="List of configured log channels."/>
+                     </ownedParameter>
+                     <node _isGeneratedControlPort="true" name="channels" parameter="__generated_xUML_Ctrl_Port_log_channels_GET/_channels_activityParameter" type="__generated_xUML_Ctrl_XUMLLogChannelList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_log_channels_GET/_channels_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                  </ownedMember>
+               </nestedClassifier>
+            </nestedClassifier>
+            <nestedClassifier name="trace" xmi:id="__generated_xUML_Ctrl_Port_trace_resource" xmi:type="uml:Class">
+               <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller"/>
+               <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+               <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_trace_resource" xmi:id="__generated_xUML_Ctrl_Port_trace_RESTResource_appliedStereotype"/>
+               <nestedClassifier name="configurations" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_resource" xmi:type="uml:Class">
+                  <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.trace"/>
+                  <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                  <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_trace_configurations_resource" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_RESTResource_appliedStereotype"/>
+                  <nestedClassifier name="classifier" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_resource" xmi:type="uml:Class">
+                     <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.trace.configurations"/>
+                     <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                     <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_resource" relativePath=":classifier" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_RESTResource_appliedStereotype"/>
+                     <nestedClassifier name="identifiers" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_resource" xmi:type="uml:Class">
+                        <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.trace.configurations.:classifier"/>
+                        <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                        <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_resource" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_RESTResource_appliedStereotype"/>
+                        <nestedClassifier name="id" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_resource" xmi:type="uml:Class">
+                           <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.trace.configurations.:classifier.identifiers"/>
+                           <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                           <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_resource" relativePath=":id" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_RESTResource_appliedStereotype"/>
+                           <nestedClassifier name="raw" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_resource" xmi:type="uml:Class">
+                              <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.trace.configurations.:classifier.identifiers.:id"/>
+                              <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                              <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_resource" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_RESTResource_appliedStereotype"/>
+                              <ownedOperation isStatic="true" name="GET" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_operation" xmi:type="uml:Operation">
+                                 <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_REST_appliedStereotype"/>
+                                 <ownedComment body="Get asynchronous trace data as stored internally.&#xD;&#xA;                             The exact representation is for information only and shouldn't be relied upon."/>
+                                 <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_activity"/>
+                                 <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_classifier_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Classifier being traced"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_classifier_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_classifier_parameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <ownedParameter direction="in" name="id" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_id_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Identifier id."/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_id_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_id_parameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <ownedParameter direction="out" name="data" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Blob" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_data_parameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Raw asynchronous trace data."/>
+                                 </ownedParameter>
+                              </ownedOperation>
+                              <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_CLASSIFIER_IDENTIFIER_RAWDATA_GET" name="GET" specification="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_activity" xmi:type="uml:Activity">
+                                 <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_classifier_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Classifier being traced"/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_classifier_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_classifier_activityParameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="classifier" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_classifier_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_classifier_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 <ownedParameter direction="in" name="id" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_id_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Identifier id."/>
+                                    <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_id_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_id_activityParameter_REST_appliedStereotype"/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="id" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_id_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_id_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                                 <ownedParameter direction="out" name="data" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Blob" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_data_activityParameter" xmi:type="uml:Parameter">
+                                    <ownedComment body="Raw asynchronous trace data."/>
+                                 </ownedParameter>
+                                 <node _isGeneratedControlPort="true" name="data" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_data_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/Blob" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_data_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                              </ownedMember>
+                           </nestedClassifier>
+                           <ownedOperation isStatic="true" name="DELETE" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_operation" xmi:type="uml:Operation">
+                              <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_operation" httpMethod="DELETE" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_REST_appliedStereotype"/>
+                              <ownedComment body="Remove asynchronous trace identifier."/>
+                              <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_activity"/>
+                              <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_classifier_parameter" xmi:type="uml:Parameter">
+                                 <ownedComment body="Classifier being traced"/>
+                                 <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_classifier_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_classifier_parameter_REST_appliedStereotype"/>
+                              </ownedParameter>
+                              <ownedParameter direction="in" name="id" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_id_parameter" xmi:type="uml:Parameter">
+                                 <ownedComment body="Identifier id."/>
+                                 <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_id_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_id_parameter_REST_appliedStereotype"/>
+                              </ownedParameter>
+                           </ownedOperation>
+                           <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_CLASSIFIER_IDENTIFIER_REMOVE" name="DELETE" specification="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_activity" xmi:type="uml:Activity">
+                              <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_classifier_activityParameter" xmi:type="uml:Parameter">
+                                 <ownedComment body="Classifier being traced"/>
+                                 <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_classifier_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_classifier_activityParameter_REST_appliedStereotype"/>
+                              </ownedParameter>
+                              <node _isGeneratedControlPort="true" name="classifier" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_classifier_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_classifier_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                              <ownedParameter direction="in" name="id" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_id_activityParameter" xmi:type="uml:Parameter">
+                                 <ownedComment body="Identifier id."/>
+                                 <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_id_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_id_activityParameter_REST_appliedStereotype"/>
+                              </ownedParameter>
+                              <node _isGeneratedControlPort="true" name="id" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_id_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_id_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                           </ownedMember>
+                        </nestedClassifier>
+                        <ownedOperation isStatic="true" name="GET/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_operation" xmi:type="uml:Operation">
+                           <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_REST_appliedStereotype"/>
+                           <ownedComment body="List asynchronous trace identifiers for a classifier."/>
+                           <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_activity"/>
+                           <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_classifier_parameter" xmi:type="uml:Parameter">
+                              <ownedComment body="Classifier being traced"/>
+                              <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_classifier_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_classifier_parameter_REST_appliedStereotype"/>
+                           </ownedParameter>
+                           <ownedParameter direction="out" name="identifiers" type="__generated_xUML_Ctrl_XUMLTraceIdentifierList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_identifiers_parameter" xmi:type="uml:Parameter">
+                              <ownedComment body="List of collected asynchronous trace identifiers."/>
+                           </ownedParameter>
+                        </ownedOperation>
+                        <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_CLASSIFIER_IDENTIFIERS_GET" name="GET/" specification="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_activity" xmi:type="uml:Activity">
+                           <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_classifier_activityParameter" xmi:type="uml:Parameter">
+                              <ownedComment body="Classifier being traced"/>
+                              <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_classifier_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_classifier_activityParameter_REST_appliedStereotype"/>
+                           </ownedParameter>
+                           <node _isGeneratedControlPort="true" name="classifier" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_classifier_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_classifier_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                           <ownedParameter direction="out" name="identifiers" type="__generated_xUML_Ctrl_XUMLTraceIdentifierList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_identifiers_activityParameter" xmi:type="uml:Parameter">
+                              <ownedComment body="List of collected asynchronous trace identifiers."/>
+                           </ownedParameter>
+                           <node _isGeneratedControlPort="true" name="identifiers" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_identifiers_activityParameter" type="__generated_xUML_Ctrl_XUMLTraceIdentifierList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_identifiers_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                        </ownedMember>
+                        <ownedOperation isStatic="true" name="DELETE/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_operation" xmi:type="uml:Operation">
+                           <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_operation" httpMethod="DELETE" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_REST_appliedStereotype"/>
+                           <ownedComment body="Remove all asynchronous trace identifiers for the classifier."/>
+                           <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_activity"/>
+                           <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_classifier_parameter" xmi:type="uml:Parameter">
+                              <ownedComment body="Classifier being traced"/>
+                              <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_classifier_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_classifier_parameter_REST_appliedStereotype"/>
+                           </ownedParameter>
+                           <ownedParameter direction="in" name="olderThan" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/DateTime" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_olderThan_parameter" xmi:type="uml:Parameter">
+                              <ownedComment body="Only traces created before this time point"/>
+                              <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_olderThan_parameter" in="query" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_olderThan_parameter_REST_appliedStereotype"/>
+                           </ownedParameter>
+                        </ownedOperation>
+                        <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_CLASSIFIER_IDENTIFIERS_REMOVE_ALL" name="DELETE/" specification="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_activity" xmi:type="uml:Activity">
+                           <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_classifier_activityParameter" xmi:type="uml:Parameter">
+                              <ownedComment body="Classifier being traced"/>
+                              <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_classifier_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_classifier_activityParameter_REST_appliedStereotype"/>
+                           </ownedParameter>
+                           <node _isGeneratedControlPort="true" name="classifier" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_classifier_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_classifier_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                           <ownedParameter direction="in" name="olderThan" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/DateTime" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_olderThan_activityParameter" xmi:type="uml:Parameter">
+                              <ownedComment body="Only traces created before this time point"/>
+                              <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_olderThan_activityParameter" in="query" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_olderThan_activityParameter_REST_appliedStereotype"/>
+                           </ownedParameter>
+                           <node _isGeneratedControlPort="true" name="olderThan" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_olderThan_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/DateTime" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_olderThan_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                        </ownedMember>
+                     </nestedClassifier>
+                     <ownedOperation isStatic="true" name="GET" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_operation" xmi:type="uml:Operation">
+                        <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_REST_appliedStereotype"/>
+                        <ownedComment body="Get classifier asynchronous trace configuration."/>
+                        <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_activity"/>
+                        <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_classifier_parameter" xmi:type="uml:Parameter">
+                           <ownedComment body="Classifier being traced"/>
+                           <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_classifier_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_classifier_parameter_REST_appliedStereotype"/>
+                        </ownedParameter>
+                        <ownedParameter direction="out" name="configuration" type="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_configuration_parameter" xmi:type="uml:Parameter">
+                           <ownedComment body="Asynchronous trace configuration."/>
+                        </ownedParameter>
+                     </ownedOperation>
+                     <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_CLASSIFIER_CONFIG_GET" name="GET" specification="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_activity" xmi:type="uml:Activity">
+                        <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_classifier_activityParameter" xmi:type="uml:Parameter">
+                           <ownedComment body="Classifier being traced"/>
+                           <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_classifier_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_classifier_activityParameter_REST_appliedStereotype"/>
+                        </ownedParameter>
+                        <node _isGeneratedControlPort="true" name="classifier" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_classifier_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_classifier_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                        <ownedParameter direction="out" name="configuration" type="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_configuration_activityParameter" xmi:type="uml:Parameter">
+                           <ownedComment body="Asynchronous trace configuration."/>
+                        </ownedParameter>
+                        <node _isGeneratedControlPort="true" name="configuration" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_configuration_activityParameter" type="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_configuration_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                     </ownedMember>
+                     <ownedOperation isStatic="true" name="PUT" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_operation" xmi:type="uml:Operation">
+                        <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_operation" httpMethod="PUT" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_REST_appliedStereotype"/>
+                        <ownedComment body="Replace classifier asynchronous trace configuration."/>
+                        <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_activity"/>
+                        <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_classifier_parameter" xmi:type="uml:Parameter">
+                           <ownedComment body="Classifier being traced"/>
+                           <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_classifier_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_classifier_parameter_REST_appliedStereotype"/>
+                        </ownedParameter>
+                        <ownedParameter direction="in" name="configuration" type="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_configuration_parameter" xmi:type="uml:Parameter">
+                           <ownedComment body="Asynchronous trace configuration."/>
+                           <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_configuration_parameter" in="body" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_configuration_parameter_REST_appliedStereotype"/>
+                        </ownedParameter>
+                     </ownedOperation>
+                     <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_CLASSIFIER_CONFIG_REPLACE" name="PUT" specification="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_activity" xmi:type="uml:Activity">
+                        <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_classifier_activityParameter" xmi:type="uml:Parameter">
+                           <ownedComment body="Classifier being traced"/>
+                           <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_classifier_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_classifier_activityParameter_REST_appliedStereotype"/>
+                        </ownedParameter>
+                        <node _isGeneratedControlPort="true" name="classifier" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_classifier_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_classifier_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                        <ownedParameter direction="in" name="configuration" type="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_configuration_activityParameter" xmi:type="uml:Parameter">
+                           <ownedComment body="Asynchronous trace configuration."/>
+                           <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_configuration_activityParameter" in="body" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_configuration_activityParameter_REST_appliedStereotype"/>
+                        </ownedParameter>
+                        <node _isGeneratedControlPort="true" name="configuration" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_configuration_activityParameter" type="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_configuration_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                     </ownedMember>
+                     <ownedOperation isStatic="true" name="DELETE" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_operation" xmi:type="uml:Operation">
+                        <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_operation" httpMethod="DELETE" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_REST_appliedStereotype"/>
+                        <ownedComment body="Remove classifier asynchronous trace configuration."/>
+                        <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_activity"/>
+                        <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_classifier_parameter" xmi:type="uml:Parameter">
+                           <ownedComment body="Classifier being traced"/>
+                           <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_classifier_parameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_classifier_parameter_REST_appliedStereotype"/>
+                        </ownedParameter>
+                     </ownedOperation>
+                     <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_CLASSIFIER_CONFIG_REMOVE" name="DELETE" specification="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_activity" xmi:type="uml:Activity">
+                        <ownedParameter direction="in" name="classifier" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_classifier_activityParameter" xmi:type="uml:Parameter">
+                           <ownedComment body="Classifier being traced"/>
+                           <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_classifier_activityParameter" in="path" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_classifier_activityParameter_REST_appliedStereotype"/>
+                        </ownedParameter>
+                        <node _isGeneratedControlPort="true" name="classifier" parameter="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_classifier_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_classifier_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                     </ownedMember>
+                  </nestedClassifier>
+                  <ownedOperation isStatic="true" name="GET/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_GET/_operation" xmi:type="uml:Operation">
+                     <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_configurations_GET/_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_GET/_REST_appliedStereotype"/>
+                     <ownedComment body="List all asynchronous trace configurations."/>
+                     <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_GET/_activity"/>
+                     <ownedParameter direction="out" name="configurations" type="__generated_xUML_Ctrl_XUMLTraceConfigurationList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_GET/_configurations_parameter" xmi:type="uml:Parameter">
+                        <ownedComment body="List of all asynchronous trace configurations."/>
+                     </ownedParameter>
+                  </ownedOperation>
+                  <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_CONFIGURATIONS_GET" name="GET/" specification="__generated_xUML_Ctrl_Port_trace_configurations_GET/_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_GET/_activity" xmi:type="uml:Activity">
+                     <ownedParameter direction="out" name="configurations" type="__generated_xUML_Ctrl_XUMLTraceConfigurationList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_GET/_configurations_activityParameter" xmi:type="uml:Parameter">
+                        <ownedComment body="List of all asynchronous trace configurations."/>
+                     </ownedParameter>
+                     <node _isGeneratedControlPort="true" name="configurations" parameter="__generated_xUML_Ctrl_Port_trace_configurations_GET/_configurations_activityParameter" type="__generated_xUML_Ctrl_XUMLTraceConfigurationList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_GET/_configurations_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                  </ownedMember>
+                  <ownedOperation isStatic="true" name="POST/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_POST/_operation" xmi:type="uml:Operation">
+                     <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_configurations_POST/_operation" httpMethod="POST" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_POST/_REST_appliedStereotype"/>
+                     <ownedComment body="Insert new asynchronous trace configuration."/>
+                     <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_POST/_activity"/>
+                     <ownedParameter direction="in" name="configuration" type="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_POST/_configuration_parameter" xmi:type="uml:Parameter">
+                        <ownedComment body="Asynchronous trace configuration"/>
+                        <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_POST/_configuration_parameter" in="body" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_POST/_configuration_parameter_REST_appliedStereotype"/>
+                     </ownedParameter>
+                  </ownedOperation>
+                  <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_CONFIGURATIONS_NEW" name="POST/" specification="__generated_xUML_Ctrl_Port_trace_configurations_POST/_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_POST/_activity" xmi:type="uml:Activity">
+                     <ownedParameter direction="in" name="configuration" type="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_POST/_configuration_activityParameter" xmi:type="uml:Parameter">
+                        <ownedComment body="Asynchronous trace configuration"/>
+                        <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_configurations_POST/_configuration_activityParameter" in="body" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_POST/_configuration_activityParameter_REST_appliedStereotype"/>
+                     </ownedParameter>
+                     <node _isGeneratedControlPort="true" name="configuration" parameter="__generated_xUML_Ctrl_Port_trace_configurations_POST/_configuration_activityParameter" type="__generated_xUML_Ctrl_XUMLTraceConfiguration_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_POST/_configuration_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                  </ownedMember>
+                  <ownedOperation isStatic="true" name="DELETE/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_DELETE/_operation" xmi:type="uml:Operation">
+                     <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_configurations_DELETE/_operation" httpMethod="DELETE" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_DELETE/_REST_appliedStereotype"/>
+                     <ownedComment body="Remove asynchronous trace configurations."/>
+                     <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_DELETE/_activity"/>
+                  </ownedOperation>
+                  <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_CONFIGURATIONS_DELETE" name="DELETE/" specification="__generated_xUML_Ctrl_Port_trace_configurations_DELETE/_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_configurations_DELETE/_activity" xmi:type="uml:Activity"/>
+               </nestedClassifier>
+               <nestedClassifier name="identifiers" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_resource" xmi:type="uml:Class">
+                  <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.trace"/>
+                  <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                  <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_trace_identifiers_resource" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_RESTResource_appliedStereotype"/>
+                  <ownedOperation isStatic="true" name="GET/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_operation" xmi:type="uml:Operation">
+                     <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_REST_appliedStereotype"/>
+                     <ownedComment body="List asynchronous trace identifiers."/>
+                     <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_activity"/>
+                     <ownedParameter direction="out" name="identifiers" type="__generated_xUML_Ctrl_XUMLTraceIdentifierList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_identifiers_parameter" xmi:type="uml:Parameter">
+                        <ownedComment body="List of collected asynchronous trace identifiers."/>
+                     </ownedParameter>
+                  </ownedOperation>
+                  <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_IDENTIFIERS_GET" name="GET/" specification="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_activity" xmi:type="uml:Activity">
+                     <ownedParameter direction="out" name="identifiers" type="__generated_xUML_Ctrl_XUMLTraceIdentifierList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_identifiers_activityParameter" xmi:type="uml:Parameter">
+                        <ownedComment body="List of collected asynchronous trace identifiers."/>
+                     </ownedParameter>
+                     <node _isGeneratedControlPort="true" name="identifiers" parameter="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_identifiers_activityParameter" type="__generated_xUML_Ctrl_XUMLTraceIdentifierList_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_identifiers_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                  </ownedMember>
+                  <ownedOperation isStatic="true" name="DELETE/" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_operation" xmi:type="uml:Operation">
+                     <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_AsyncTracing_tag" base_Operation="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_operation" httpMethod="DELETE" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_REST_appliedStereotype"/>
+                     <ownedComment body="Remove asynchronous trace identifiers."/>
+                     <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_activity"/>
+                     <ownedParameter direction="in" name="olderThan" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/DateTime" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_olderThan_parameter" xmi:type="uml:Parameter">
+                        <ownedComment body="Only traces created before this time point"/>
+                        <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_olderThan_parameter" in="query" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_olderThan_parameter_REST_appliedStereotype"/>
+                     </ownedParameter>
+                  </ownedOperation>
+                  <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_ASYNCTRACE_IDENTIFIERS_DELETE" name="DELETE/" specification="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_operation" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_activity" xmi:type="uml:Activity">
+                     <ownedParameter direction="in" name="olderThan" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/DateTime" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_olderThan_activityParameter" xmi:type="uml:Parameter">
+                        <ownedComment body="Only traces created before this time point"/>
+                        <ebp:RESTParameter base_Parameter="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_olderThan_activityParameter" in="query" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_olderThan_activityParameter_REST_appliedStereotype"/>
+                     </ownedParameter>
+                     <node _isGeneratedControlPort="true" name="olderThan" parameter="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_olderThan_activityParameter" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/DateTime" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_olderThan_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                  </ownedMember>
+               </nestedClassifier>
+            </nestedClassifier>
+            <nestedClassifier name="pstate" xmi:id="__generated_xUML_Ctrl_Port_pstate_resource" xmi:type="uml:Class">
+               <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller"/>
+               <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+               <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_pstate_resource" xmi:id="__generated_xUML_Ctrl_Port_pstate_RESTResource_appliedStereotype"/>
+               <nestedClassifier name="engine" xmi:id="__generated_xUML_Ctrl_Port_pstate_engine_resource" xmi:type="uml:Class">
+                  <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller.pstate"/>
+                  <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+                  <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_pstate_engine_resource" xmi:id="__generated_xUML_Ctrl_Port_pstate_engine_RESTResource_appliedStereotype"/>
+                  <ownedOperation isStatic="true" name="GET" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_pstate_engine_GET_operation" xmi:type="uml:Operation">
+                     <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_xUMLService_tag" base_Operation="__generated_xUML_Ctrl_Port_pstate_engine_GET_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_pstate_engine_GET_REST_appliedStereotype"/>
+                     <ownedComment body="Get service persistent state information.&#xD;&#xA;                                         Check if the xUML service uses persistent state and get general information on the persistent state configuration."/>
+                     <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_pstate_engine_GET_activity"/>
+                     <ownedParameter direction="out" name="event" type="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_pstate_engine_GET_event_parameter" xmi:type="uml:Parameter">
+                        <ownedComment body="Persistent state configuration."/>
+                     </ownedParameter>
+                  </ownedOperation>
+                  <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_PSTATE_ENGINE_INFO_GET" name="GET" specification="__generated_xUML_Ctrl_Port_pstate_engine_GET_operation" xmi:id="__generated_xUML_Ctrl_Port_pstate_engine_GET_activity" xmi:type="uml:Activity">
+                     <ownedParameter direction="out" name="event" type="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_pstate_engine_GET_event_activityParameter" xmi:type="uml:Parameter">
+                        <ownedComment body="Persistent state configuration."/>
+                     </ownedParameter>
+                     <node _isGeneratedControlPort="true" name="event" parameter="__generated_xUML_Ctrl_Port_pstate_engine_GET_event_activityParameter" type="__generated_xUML_Ctrl_XUMLPersistentStateEngineInfo_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_pstate_engine_GET_event_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+                  </ownedMember>
+               </nestedClassifier>
+            </nestedClassifier>
+            <nestedClassifier name="status" xmi:id="__generated_xUML_Ctrl_Port_status_resource" xmi:type="uml:Class">
+               <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller"/>
+               <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+               <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_status_resource" xmi:id="__generated_xUML_Ctrl_Port_status_RESTResource_appliedStereotype"/>
+               <ownedOperation isStatic="true" name="GET" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_status_GET_operation" xmi:type="uml:Operation">
+                  <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_xUMLService_tag" base_Operation="__generated_xUML_Ctrl_Port_status_GET_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_status_GET_REST_appliedStereotype"/>
+                  <ownedComment body="Get server status.&#xD;&#xA;                                         Get the status of the persistent state server."/>
+                  <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_status_GET_activity"/>
+                  <ownedParameter direction="out" name="status" type="__generated_xUML_Ctrl_XUMLServiceStatus_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_status_GET_status_parameter" xmi:type="uml:Parameter">
+                     <ownedComment body="Current server status."/>
+                  </ownedParameter>
+               </ownedOperation>
+               <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_SERVER_STATUS" name="GET" specification="__generated_xUML_Ctrl_Port_status_GET_operation" xmi:id="__generated_xUML_Ctrl_Port_status_GET_activity" xmi:type="uml:Activity">
+                  <ownedParameter direction="out" name="status" type="__generated_xUML_Ctrl_XUMLServiceStatus_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_status_GET_status_activityParameter" xmi:type="uml:Parameter">
+                     <ownedComment body="Current server status."/>
+                  </ownedParameter>
+                  <node _isGeneratedControlPort="true" name="status" parameter="__generated_xUML_Ctrl_Port_status_GET_status_activityParameter" type="__generated_xUML_Ctrl_XUMLServiceStatus_class" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_status_GET_status_activityParameterNode" xmi:type="uml:ActivityParameterNode"/>
+               </ownedMember>
+            </nestedClassifier>
+            <nestedClassifier name="isAlive" xmi:id="__generated_xUML_Ctrl_Port_isAlive_resource" xmi:type="uml:Class">
+               <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller"/>
+               <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+               <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_isAlive_resource" xmi:id="__generated_xUML_Ctrl_Port_isAlive_RESTResource_appliedStereotype"/>
+               <ownedOperation isStatic="true" name="GET" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_isAlive_GET_operation" xmi:type="uml:Operation">
+                  <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_xUMLService_tag" base_Operation="__generated_xUML_Ctrl_Port_isAlive_GET_operation" httpMethod="GET" xmi:id="__generated_xUML_Ctrl_Port_isAlive_GET_REST_appliedStereotype"/>
+                  <ownedComment body="Check if the xUML service is ready.&#xD;&#xA;                                         A success HTTP code indicated readiness, en error HTTP code indicates startup still in progress."/>
+                  <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_isAlive_GET_activity"/>
+               </ownedOperation>
+               <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_SERVER_IS_ALIVE" name="GET" specification="__generated_xUML_Ctrl_Port_isAlive_GET_operation" xmi:id="__generated_xUML_Ctrl_Port_isAlive_GET_activity" xmi:type="uml:Activity"/>
+            </nestedClassifier>
+            <nestedClassifier name="stop" xmi:id="__generated_xUML_Ctrl_Port_stop_resource" xmi:type="uml:Class">
+               <ebp:umlNamespace value="urn:xUML_Controller.xUML Controller"/>
+               <ebp:xmlNamespace value="http://e2e.ch/bridge/controller"/>
+               <ebp:RESTResource _isGeneratedControlPort="true" baseClass="__generated_xUML_Ctrl_Port_stop_resource" xmi:id="__generated_xUML_Ctrl_Port_stop_RESTResource_appliedStereotype"/>
+               <ownedOperation isStatic="true" name="PUT" visibility="public" xmi:id="__generated_xUML_Ctrl_Port_stop_PUT_operation" xmi:type="uml:Operation">
+                  <ebp:REST _isGeneratedControlPort="true" _restTag="__generated_xUML_Ctrl_xUMLService_tag" base_Operation="__generated_xUML_Ctrl_Port_stop_PUT_operation" httpMethod="PUT" xmi:id="__generated_xUML_Ctrl_Port_stop_PUT_REST_appliedStereotype"/>
+                  <ownedComment body="Stop the service.&#xD;&#xA;                                         Stop the running xUML service."/>
+                  <ebp:method xmi:idref="__generated_xUML_Ctrl_Port_stop_PUT_activity"/>
+               </ownedOperation>
+               <ownedMember _isGeneratedControlPort="true" ebp:componentId="CTRLAPI_SERVER_SHUTDOWN" name="PUT" specification="__generated_xUML_Ctrl_Port_stop_PUT_operation" xmi:id="__generated_xUML_Ctrl_Port_stop_PUT_activity" xmi:type="uml:Activity"/>
+            </nestedClassifier>
+            <ownedMember supplier="__generated_xUML_Ctrl_Logging_tag" xmi:id="usage__generated_xUML_Ctrl_Port_log_channels_GET/_operation____generated_xUML_Ctrl_Logging_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_log_channels_GET/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_Logging_tag" xmi:id="usage__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_operation____generated_xUML_Ctrl_Logging_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_GET/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_Logging_tag" xmi:id="usage__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_operation____generated_xUML_Ctrl_Logging_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_GET/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_Logging_tag" xmi:id="usage__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_operation____generated_xUML_Ctrl_Logging_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_PUT_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_Logging_tag" xmi:id="usage__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_operation____generated_xUML_Ctrl_Logging_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_POST/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_Logging_tag" xmi:id="usage__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_operation____generated_xUML_Ctrl_Logging_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_GET_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_Logging_tag" xmi:id="usage__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_operation____generated_xUML_Ctrl_Logging_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_PUT_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_Logging_tag" xmi:id="usage__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_operation____generated_xUML_Ctrl_Logging_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_log_channels_:channel_sinks_:sink_filters_:filterNum_DELETE_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_identifiers_GET/_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_identifiers_GET/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_identifiers_DELETE/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_configurations_GET/_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_GET/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_configurations_POST/_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_POST/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_configurations_DELETE/_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_DELETE/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_GET_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_PUT_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_DELETE_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_GET/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_DELETE/_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_DELETE_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_AsyncTracing_tag" xmi:id="usage__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_operation____generated_xUML_Ctrl_AsyncTracing_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_trace_configurations_:classifier_identifiers_:id_raw_GET_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_xUMLService_tag" xmi:id="usage__generated_xUML_Ctrl_Port_pstate_engine_GET_operation____generated_xUML_Ctrl_xUMLService_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_pstate_engine_GET_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_xUMLService_tag" xmi:id="usage__generated_xUML_Ctrl_Port_status_GET_operation____generated_xUML_Ctrl_xUMLService_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_status_GET_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_xUMLService_tag" xmi:id="usage__generated_xUML_Ctrl_Port_isAlive_GET_operation____generated_xUML_Ctrl_xUMLService_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_isAlive_GET_operation"/>
+            </ownedMember>
+            <ownedMember supplier="__generated_xUML_Ctrl_xUMLService_tag" xmi:id="usage__generated_xUML_Ctrl_Port_stop_PUT_operation____generated_xUML_Ctrl_xUMLService_tag" xmi:type="uml:Usage">
+               <client xmi:idref="__generated_xUML_Ctrl_Port_stop_PUT_operation"/>
+            </ownedMember>
          </ownedMember>
       </ownedMember>
    </uml:Model>
-<XMI_imports><idtable><file id="E2E_BRIDGE_BASE_COMPONENTS" name="E2E Bridge Base.xml" path="C:\Program Files\MagicDraw\modelLibraries\E2E Bridge Base.xml"/><file id="E2E_BRIDGE_PROFILE" name="E2E Bridge Profile.xml" path="C:\Program Files\MagicDraw\profiles\E2E Bridge Profile.xml"/></idtable><ownedMember name="HeaderField" xmi:id="E2E_BRIDGE_BASE_COMPONENTS|_1763043c_1102534659306_636355_5" xmi:type="uml:Class"><ebp:errorLocation value="E2E_BRIDGE_BASE_COMPONENTS|GEN_1065094250389_956183_167~E2E_BRIDGE_BASE_COMPONENTS|e2e_bridge_base_components~E2E_BRIDGE_BASE_COMPONENTS|_679022a_1074594035097_553073_93~E2E_BRIDGE_BASE_COMPONENTS|_1763043c_1102534659306_943960_6~E2E_BRIDGE_BASE_COMPONENTS|_1763043c_1102534659306_636355_5"/>
+<XMI_imports><idtable><file id="E2E_BRIDGE_BASE_COMPONENTS" name="E2E Bridge Base.xml" path="C:\Users\jproc\AppData\Local\Temp\xumlc10681494382560433557\E2E Bridge Base.xml"/><file id="E2E_BRIDGE_PROFILE" name="E2E Bridge Profile.xml" path="C:\Users\jproc\AppData\Local\Temp\xumlc10681494382560433557\E2E Bridge Profile.xml"/></idtable><ownedMember name="HeaderField" xmi:id="E2E_BRIDGE_BASE_COMPONENTS|_1763043c_1102534659306_636355_5" xmi:type="uml:Class"><ebp:errorLocation value="E2E_BRIDGE_BASE_COMPONENTS|GEN_1065094250389_956183_167~E2E_BRIDGE_BASE_COMPONENTS|e2e_bridge_base_components~E2E_BRIDGE_BASE_COMPONENTS|_679022a_1074594035097_553073_93~E2E_BRIDGE_BASE_COMPONENTS|_1763043c_1102534659306_943960_6~E2E_BRIDGE_BASE_COMPONENTS|_1763043c_1102534659306_636355_5"/>
                   <ebp:umlNamespace value="urn:Base_Components.Add_Ons.HTTP"/>
                   <ebp:xmlNamespace value="http://e2e.ch/bridge/addOns/http"/>
                   <ownedAttribute name="value" type="E2E_BRIDGE_BASE_COMPONENTS|http://www.e2e.ch/bridge/types/String" visibility="public" xmi:id="E2E_BRIDGE_BASE_COMPONENTS|_1763043c_1102534659306_781776_3" xmi:type="uml:Property">

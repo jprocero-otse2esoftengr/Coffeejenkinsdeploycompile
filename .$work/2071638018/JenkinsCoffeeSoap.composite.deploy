@@ -13,7 +13,7 @@
          <RepositoryEntry path="swagger/"/>
       </RepositoryEntries>
    </RepositoryConfiguration>
-   <RuntimeConstraints/>
+   <RuntimeConstraints recommendedVersion="2021.6"/>
    <BridgeConfiguration category="Training2025"
                         classToXMLDefaultRootName="Default"
                         classifierID="2071638018|_18_0_6_66e021f_1756408897943_231054_14115"
@@ -26,6 +26,33 @@
                         umlLocation="2071638018|ROOT_MODEL_XMI.ID~2071638018|_18_0_6_66e021f_1756408897909_619460_14082~2071638018|_18_0_6_66e021f_1756408897943_582087_14116~2071638018|_18_0_6_66e021f_1756408897943_231054_14115"
                         version="0.0.1">
       <Services>
+         <Service externalURL="http://${server_hostname}:${addOn_Services_Service_xUMLControllerService_Port}"
+                  id="__generated_xUML_Ctrl_Service"
+                  instanceName="xUMLControllerService"
+                  label="xUMLControllerService:xUMLControllerService"
+                  name="xUMLControllerService"
+                  namespace="urn:Component_View.Composites"
+                  package="Component_View.Composites.JenkinsCoffeeSoap"
+                  port="${addOn_Services_Service_xUMLControllerService_Port}"
+                  protocol="http"
+                  restClientURL="http://${server_hostname}:${addOn_Services_Service_xUMLControllerService_Port}/e2e.rest.test.tool/index.html"
+                  stereotype="E2ERESTService"
+                  umlLocation="2071638018|ROOT_MODEL_XMI.ID~2071638018|_18_0_6_66e021f_1756408897909_619460_14082~2071638018|_18_0_6_66e021f_1756408897943_582087_14116~2071638018|_18_0_6_66e021f_1756408897943_231054_14115~__generated_xUML_Ctrl_Service"
+                  url="http://NoHostInfo:${addOn_Services_Service_xUMLControllerService_Port}"
+                  wsdl="false">
+            <Documentation/>
+            <Ports>
+               <Port descriptorPath="swagger/xUMLControllerService.xUML Runtime API.yaml"
+                     descriptorURL="http://${server_hostname}:${addOn_Services_Service_xUMLControllerService_Port}/e2e.rest.descriptors/xUMLControllerService.xUML Runtime API.yaml"
+                     escapedPath="/api"
+                     instanceName="xUML Runtime API"
+                     name="xUML Runtime API"
+                     overrideName="xUML Runtime API"
+                     package="xUML_Controller"
+                     path="/api"
+                     version="1.2.0"/>
+            </Ports>
+         </Service>
          <Service authenticationMode="None"
                   externalURL="http://${wsdl_host_urn:Component_View.Composites.JenkinsCoffeeSoap.BuilderUMLService}:${addOn_SEI_HTTP_Service_BuilderUMLService_Port}"
                   id="2071638018|_18_0_6_66e021f_1756408928950_546722_14175"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<AsynchronousTrace controlPort="${global_e2e_configuration_controller_Port}" host="localhost">
+<AsynchronousTrace controlPort="${addOn_Services_Service_xUMLControllerService_Port}"
+                   host="localhost">
    <Service>
       <Name>BuilderUMLService</Name>
       <Stereotype>E2ESOAPService</Stereotype>
