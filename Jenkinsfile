@@ -52,7 +52,37 @@ pipeline {
                         )
                          
                         echo All repository files found, starting deployment...
-                        npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        echo Using Bridge host: ${BRIDGE_HOST}:${BRIDGE_PORT}
+                        echo Testing connectivity to Bridge...
+                        
+                        echo Testing port ${BRIDGE_PORT}...
+                        powershell "Test-NetConnection -ComputerName ${BRIDGE_HOST} -Port ${BRIDGE_PORT}"
+                        
+                        echo Starting deployment...
+                        echo Setting Bridge environment variables...
+                        set BRIDGE_HOST=${BRIDGE_HOST}
+                        set BRIDGE_PORT=${BRIDGE_PORT}
+                        set BRIDGE_USERNAME=${BRIDGE_USER}
+                        set BRIDGE_PASSWORD=${BRIDGE_PASSWORD}
+                        
+                        echo Attempting deployment with port in host parameter...
+                        npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST}:${BRIDGE_PORT} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        
+                        if errorlevel 1 (
+                            echo First deployment attempt failed, trying alternative approach...
+                            echo Attempting deployment with separate host and port...
+                            npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep --host ${BRIDGE_HOST} --port ${BRIDGE_PORT} --username ${BRIDGE_USER} --password ${BRIDGE_PASSWORD} --overwrite
+                        )
+                        
+                        if errorlevel 1 (
+                            echo Second deployment attempt failed, trying with environment variables...
+                            echo Attempting deployment using environment variables...
+                            set E2E_BRIDGE_HOST=${BRIDGE_HOST}
+                            set E2E_BRIDGE_PORT=${BRIDGE_PORT}
+                            set E2E_BRIDGE_USERNAME=${BRIDGE_USER}
+                            set E2E_BRIDGE_PASSWORD=${BRIDGE_PASSWORD}
+                            npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep --overwrite
+                        )
                         
                     """
                 }
