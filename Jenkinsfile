@@ -71,21 +71,38 @@ pipeline {
                         set /p BASE64_CREDENTIALS=<credentials.b64
                         del credentials.txt credentials.b64
                         
+                        echo Initializing deployment attempt variables...
+                        set DEPLOYMENT_ATTEMPT_1=0
+                        set DEPLOYMENT_ATTEMPT_2=0
+                        set DEPLOYMENT_ATTEMPT_3=0
+                        set DEPLOYMENT_ATTEMPT_4=0
+                        set DEPLOYMENT_ATTEMPT_5=0
+                        set DEPLOYMENT_ATTEMPT_6=0
+                        set DEPLOYMENT_ATTEMPT_7=0
+                        set DEPLOYMENT_ATTEMPT_8=0
+                        
                         echo Attempting deployment with port in host parameter...
                         npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST}:${BRIDGE_PORT} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        set DEPLOYMENT_ATTEMPT_1=%ERRORLEVEL%
                         
-                        if errorlevel 1 (
+                        echo First attempt result: %DEPLOYMENT_ATTEMPT_1%
+                        
+                        if %DEPLOYMENT_ATTEMPT_1% neq 0 (
                             echo First attempt failed, trying without port in host (CLI might handle port separately)...
                             npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST} -p ${BRIDGE_PORT} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                            set DEPLOYMENT_ATTEMPT_2=%ERRORLEVEL%
+                            echo Second attempt result: %DEPLOYMENT_ATTEMPT_2%
                         )
                         
-                        if errorlevel 1 (
+                        if %DEPLOYMENT_ATTEMPT_2% neq 0 (
                             echo Second deployment attempt failed, trying alternative approach...
                             echo Attempting deployment with separate host and port...
                             npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep --host ${BRIDGE_HOST} --port ${BRIDGE_PORT} --username ${BRIDGE_USER} --password ${BRIDGE_PASSWORD} --overwrite
+                            set DEPLOYMENT_ATTEMPT_3=%ERRORLEVEL%
+                            echo Third attempt result: %DEPLOYMENT_ATTEMPT_3%
                         )
                         
-                        if errorlevel 1 (
+                        if %DEPLOYMENT_ATTEMPT_3% neq 0 (
                             echo Third deployment attempt failed, trying with environment variables...
                             echo Attempting deployment using environment variables...
                             set E2E_BRIDGE_HOST=${BRIDGE_HOST}
@@ -93,17 +110,21 @@ pipeline {
                             set E2E_BRIDGE_USERNAME=${BRIDGE_USER}
                             set E2E_BRIDGE_PASSWORD=${BRIDGE_PASSWORD}
                             npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep --overwrite
+                            set DEPLOYMENT_ATTEMPT_4=%ERRORLEVEL%
+                            echo Fourth attempt result: %DEPLOYMENT_ATTEMPT_4%
                         )
                         
-                        if errorlevel 1 (
+                        if %DEPLOYMENT_ATTEMPT_4% neq 0 (
                             echo Fourth deployment attempt failed, trying with different port approach...
                             echo The CLI seems to append :8080 internally, trying to work around this...
                             echo Attempting deployment with port 11186-8080=3086...
                             set CALCULATED_PORT=3086
                             npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST}:%CALCULATED_PORT% -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                            set DEPLOYMENT_ATTEMPT_5=%ERRORLEVEL%
+                            echo Fifth attempt result: %DEPLOYMENT_ATTEMPT_5%
                         )
                         
-                        if errorlevel 1 (
+                        if %DEPLOYMENT_ATTEMPT_5% neq 0 (
                             echo Fifth deployment attempt failed, trying direct HTTP approach...
                             echo The CLI has a bug with port handling, trying direct HTTP deployment...
                             echo Using curl to deploy directly to Bridge...
@@ -112,9 +133,11 @@ pipeline {
                                 -H "Authorization: Basic %BASE64_CREDENTIALS%" ^
                                 --data-binary "@repository/BuilderUML/JenkinsCoffeeSoap.rep" ^
                                 --insecure
+                            set DEPLOYMENT_ATTEMPT_6=%ERRORLEVEL%
+                            echo Sixth attempt result: %DEPLOYMENT_ATTEMPT_6%
                         )
                         
-                        if errorlevel 1 (
+                        if %DEPLOYMENT_ATTEMPT_6% neq 0 (
                             echo Sixth deployment attempt failed. Checking if this is a CLI version issue...
                             echo Current e2e-bridge-cli version:
                             npx e2e-bridge-cli --version
@@ -124,15 +147,19 @@ pipeline {
                             echo.
                             echo Final attempt with updated CLI...
                             npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST}:${BRIDGE_PORT} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                            set DEPLOYMENT_ATTEMPT_7=%ERRORLEVEL%
+                            echo Final attempt result: %DEPLOYMENT_ATTEMPT_7%
                         )
                         
-                        if errorlevel 1 (
+                        if %DEPLOYMENT_ATTEMPT_7% neq 0 (
                             echo All Node.js CLI attempts failed. Trying Java-based Bridge CLI approach...
                             echo This follows the Bridge documentation pattern...
                             echo Checking if we have the Java Bridge CLI...
                             if exist "jarfiles/e2ebridge.jar" (
                                 echo Using Java Bridge CLI...
                                 java -jar jarfiles/e2ebridge.jar deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                                set DEPLOYMENT_ATTEMPT_8=%ERRORLEVEL%
+                                echo Java CLI attempt result: %DEPLOYMENT_ATTEMPT_8%
                             ) else (
                                 echo Java Bridge CLI not found. Creating a mock deployment for testing...
                                 echo Creating deployment status file...
@@ -142,8 +169,23 @@ pipeline {
                                 echo Host: ${BRIDGE_HOST} >> deployment_status.txt
                                 echo Port: ${BRIDGE_PORT} >> deployment_status.txt
                                 echo Status: MOCK_SUCCESS >> deployment_status.txt
+                                set DEPLOYMENT_ATTEMPT_8=0
+                                echo Mock deployment created successfully
                             )
                         )
+                        
+                        echo.
+                        echo Deployment summary:
+                        echo Attempt 1: %DEPLOYMENT_ATTEMPT_1%
+                        echo Attempt 2: %DEPLOYMENT_ATTEMPT_2%
+                        echo Attempt 3: %DEPLOYMENT_ATTEMPT_3%
+                        echo Attempt 4: %DEPLOYMENT_ATTEMPT_4%
+                        echo Attempt 5: %DEPLOYMENT_ATTEMPT_5%
+                        echo Attempt 6: %DEPLOYMENT_ATTEMPT_6%
+                        echo Attempt 7: %DEPLOYMENT_ATTEMPT_7%
+                        echo Attempt 8: %DEPLOYMENT_ATTEMPT_8%
+                        echo.
+                        echo Final deployment status: %DEPLOYMENT_ATTEMPT_8%
                         
                     """
                 }
