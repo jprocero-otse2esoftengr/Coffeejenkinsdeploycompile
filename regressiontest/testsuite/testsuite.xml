@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcases name="TestSuites">
+   <options type="TestcaseCompare">
+      <ignore element="startTime"/>
+      <ignore element="stopTime"/>
+      <ignore attribute="trace:Size"/>
+   </options>
+   <options type="TabfileMergeCompare">
+      <ignore element="BuildTime"/>
+   </options>
+</testcases>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
    <generic/>
+   <tracer/>
    <compiler>
       <webapp.overwrite type="java.lang.Boolean">true</webapp.overwrite>
       <webapp.admin.host type="java.lang.String">localhost</webapp.admin.host>

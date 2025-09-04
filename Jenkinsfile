@@ -65,17 +65,28 @@ pipeline {
                         set BRIDGE_USERNAME=${BRIDGE_USER}
                         set BRIDGE_PASSWORD=${BRIDGE_PASSWORD}
                         
+                        echo Preparing base64 credentials for direct HTTP deployment...
+                        echo %BRIDGE_USER%:%BRIDGE_PASSWORD% > credentials.txt
+                        certutil -encode credentials.txt credentials.b64 >nul
+                        set /p BASE64_CREDENTIALS=<credentials.b64
+                        del credentials.txt credentials.b64
+                        
                         echo Attempting deployment with port in host parameter...
                         npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST}:${BRIDGE_PORT} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
                         
                         if errorlevel 1 (
-                            echo First deployment attempt failed, trying alternative approach...
+                            echo First attempt failed, trying without port in host (CLI might handle port separately)...
+                            npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST} -p ${BRIDGE_PORT} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        )
+                        
+                        if errorlevel 1 (
+                            echo Second deployment attempt failed, trying alternative approach...
                             echo Attempting deployment with separate host and port...
                             npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep --host ${BRIDGE_HOST} --port ${BRIDGE_PORT} --username ${BRIDGE_USER} --password ${BRIDGE_PASSWORD} --overwrite
                         )
                         
                         if errorlevel 1 (
-                            echo Second deployment attempt failed, trying with environment variables...
+                            echo Third deployment attempt failed, trying with environment variables...
                             echo Attempting deployment using environment variables...
                             set E2E_BRIDGE_HOST=${BRIDGE_HOST}
                             set E2E_BRIDGE_PORT=${BRIDGE_PORT}
@@ -85,7 +96,7 @@ pipeline {
                         )
                         
                         if errorlevel 1 (
-                            echo Third deployment attempt failed, trying with different port approach...
+                            echo Fourth deployment attempt failed, trying with different port approach...
                             echo The CLI seems to append :8080 internally, trying to work around this...
                             echo Attempting deployment with port 11186-8080=3086...
                             set CALCULATED_PORT=3086
@@ -93,7 +104,18 @@ pipeline {
                         )
                         
                         if errorlevel 1 (
-                            echo All deployment attempts failed. Checking if this is a CLI version issue...
+                            echo Fifth deployment attempt failed, trying direct HTTP approach...
+                            echo The CLI has a bug with port handling, trying direct HTTP deployment...
+                            echo Using curl to deploy directly to Bridge...
+                            curl -X POST "https://${BRIDGE_HOST}:${BRIDGE_PORT}/bridge/rest/services" ^
+                                -H "Content-Type: application/octet-stream" ^
+                                -H "Authorization: Basic %BASE64_CREDENTIALS%" ^
+                                --data-binary "@repository/BuilderUML/JenkinsCoffeeSoap.rep" ^
+                                --insecure
+                        )
+                        
+                        if errorlevel 1 (
+                            echo Sixth deployment attempt failed. Checking if this is a CLI version issue...
                             echo Current e2e-bridge-cli version:
                             npx e2e-bridge-cli --version
                             echo.

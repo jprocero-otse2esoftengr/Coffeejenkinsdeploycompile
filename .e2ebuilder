@@ -2,11 +2,12 @@
 <project>
    <generic>
       <author type="java.lang.String">jproc</author>
-      <name type="java.lang.String">coffeelistJenkins1git</name>
+      <name type="java.lang.String">Coffeejenkinsdeploycompile</name>
       <description type="java.lang.String"/>
       <repository type="java.io.File">repository</repository>
    </generic>
-   <compiler prefix="ch.e2e.builder.compiler.">
+   <tracer/>
+   <compiler>
       <uml type="java.io.File">uml</uml>
       <optimize.java.script type="java.lang.Boolean">false</optimize.java.script>
    </compiler>
