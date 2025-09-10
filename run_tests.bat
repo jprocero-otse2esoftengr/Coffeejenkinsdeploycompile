@@ -44,13 +44,18 @@ echo - Host: %BRIDGE_HOST%
 echo - Port: %BRIDGE_PORT%
 echo - Username: %BRIDGE_USER%
 echo - Project: BuilderUML
-echo - Test Suite: testcase\coffee_service_tests.xml
+echo - Note: RegTestRunner will run all available test suites in the project
 echo.
 
 echo Starting regression tests...
 echo ========================================
 
-java -jar "jarfiles\RegTestRunner-8.10.5.jar" -project BuilderUML -suite "testcase\coffee_service_tests.xml" -host %BRIDGE_HOST% -port %BRIDGE_PORT% -username %BRIDGE_USER% -password %BRIDGE_PASSWORD% -logfile result.xml
+echo Checking available test suites...
+java -jar "jarfiles\RegTestRunner-8.10.5.jar" -project BuilderUML -host %BRIDGE_HOST% -port %BRIDGE_PORT% -username %BRIDGE_USER% -password %BRIDGE_PASSWORD% -list
+
+echo.
+echo Running all available regression tests...
+java -jar "jarfiles\RegTestRunner-8.10.5.jar" -project BuilderUML -host %BRIDGE_HOST% -port %BRIDGE_PORT% -username %BRIDGE_USER% -password %BRIDGE_PASSWORD% -logfile result.xml
 
 if errorlevel 1 (
     echo.
