@@ -70,20 +70,41 @@ pipeline {
                             echo ERROR: RegTest jar not found at ${REGTEST_JAR}
                             exit /b 1
                         )
-                        echo RegTest jar found, starting tests...
-                        java -jar "${REGTEST_JAR}" -project BuilderUML -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile result.xml
-                        if errorlevel 1 (
-                            echo Tests completed with errors
+                        
+                        echo Checking if test cases exist...
+                        if not exist "testcase\\coffee_service_tests.xml" (
+                            echo ERROR: Test cases not found in testcase directory
+                            echo Please ensure testcase/coffee_service_tests.xml exists
                             exit /b 1
                         )
+                        
+                        echo Test cases found, starting regression tests...
+                        echo Test configuration:
+                        echo - Project: BuilderUML
+                        echo - Host: ${BRIDGE_HOST}
+                        echo - Port: ${BRIDGE_PORT}
+                        echo - Username: ${BRIDGE_USER}
+                        echo - Test cases: testcase/coffee_service_tests.xml
+                        
+                        java -jar "${REGTEST_JAR}" -project BuilderUML -suite "testcase/coffee_service_tests.xml" -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile result.xml
+                        
+                        if errorlevel 1 (
+                            echo Tests completed with errors
+                            echo Checking result.xml for details...
+                            if exist result.xml (
+                                type result.xml
+                            )
+                            exit /b 1
+                        )
+                        
                         echo Tests completed successfully
                         echo Checking if result.xml was created...
                         if exist result.xml (
                             echo result.xml found, size:
                             dir result.xml
                             echo.
-                            echo NOTE: If no tests are configured, this is normal.
-                            echo To add regression tests, configure test suites in your project.
+                            echo Test results summary:
+                            type result.xml
                         ) else (
                             echo WARNING: result.xml not found
                         )
@@ -94,24 +115,46 @@ pipeline {
                 always {
                     script {
                         if (fileExists('result.xml')) {
-                            // Check if the result file has actual test results
                             def resultContent = readFile('result.xml')
+                            echo "Processing test results..."
+                            
+                            // Check if we have actual test results
                             if (resultContent.contains('tests="0"') || resultContent.contains('testsuite name=""')) {
-                                echo "No test results found in result.xml - creating placeholder"
-                                // Create a placeholder result with one skipped test
+                                echo "No test results found in result.xml - this may indicate test configuration issues"
+                                echo "Result content: ${resultContent}"
+                                
+                                // Create a placeholder result for Jenkins reporting
                                 writeFile file: 'result.xml', text: '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-   <testsuite name="Regression Tests" tests="1" failures="0" errors="0" skipped="1">
-      <testcase name="NoTestsConfigured" classname="RegressionTest">
-         <skipped message="No regression tests are currently configured for this project"/>
+   <testsuite name="Coffee Service Regression Tests" tests="1" failures="0" errors="0" skipped="1">
+      <testcase name="TestConfigurationCheck" classname="RegressionTest">
+         <skipped message="Test configuration needs verification - check test cases and service deployment"/>
       </testcase>
    </testsuite>
 </testsuites>'''
+                            } else {
+                                echo "Test results found and processed successfully"
                             }
+                            
+                            // Always publish results for Jenkins reporting
                             junit 'result.xml'
                             archiveArtifacts artifacts: 'result.xml'
+                            
+                            // Also archive test case files for debugging
+                            archiveArtifacts artifacts: 'testcase/**/*.xml'
+                            
                         } else {
-                            echo "No test results file found"
+                            echo "No test results file found - this indicates a test execution problem"
+                            // Create a failure result for Jenkins
+                            writeFile file: 'result.xml', text: '''<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+   <testsuite name="Coffee Service Regression Tests" tests="1" failures="1" errors="0" skipped="0">
+      <testcase name="TestExecutionFailure" classname="RegressionTest">
+         <failure message="Test execution failed - result.xml was not generated"/>
+      </testcase>
+   </testsuite>
+</testsuites>'''
+                            junit 'result.xml'
                         }
                     }
                 }

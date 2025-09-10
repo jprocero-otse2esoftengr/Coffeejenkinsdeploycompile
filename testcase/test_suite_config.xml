@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSuiteConfiguration name="BuilderUML Test Suite" description="Main test suite configuration for BuilderUML service">
+    
+    <testSuite name="Coffee Service Tests" file="coffee_service_tests.xml" enabled="true"/>
+    
+    <!-- Add more test suites here as needed -->
+    <!-- 
+    <testSuite name="Additional Tests" file="additional_tests.xml" enabled="false"/>
+    -->
+    
+</testSuiteConfiguration>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSuite name="Coffee Service Regression Tests" description="Regression tests for the Coffee Service operations">
+    
+    <!-- Test Case 1: Basic Coffee Operation Test -->
+    <testCase name="testCoffeeOperation1" description="Test basic operation1 with valid coffee data">
+        <input>
+            <coffeeClass>
+                <id>1</id>
+                <name>Espresso</name>
+                <description>Strong Italian coffee</description>
+                <price>350</price>
+                <category>Hot</category>
+            </coffeeClass>
+        </input>
+        <expectedOutput>
+            <!-- Expected response structure - adjust based on actual service response -->
+            <result>success</result>
+        </expectedOutput>
+        <timeout>30000</timeout>
+    </testCase>
+    
+    <!-- Test Case 2: Coffee with Different Category -->
+    <testCase name="testCoffeeOperationCold" description="Test operation1 with cold coffee category">
+        <input>
+            <coffeeClass>
+                <id>2</id>
+                <name>Iced Coffee</name>
+                <description>Refreshing cold coffee</description>
+                <price>400</price>
+                <category>Cold</category>
+            </coffeeClass>
+        </input>
+        <expectedOutput>
+            <result>success</result>
+        </expectedOutput>
+        <timeout>30000</timeout>
+    </testCase>
+    
+    <!-- Test Case 3: Coffee with Special Characters -->
+    <testCase name="testCoffeeSpecialChars" description="Test operation1 with special characters in name and description">
+        <input>
+            <coffeeClass>
+                <id>3</id>
+                <name>Café au Lait</name>
+                <description>French coffee with milk - très bon!</description>
+                <price>450</price>
+                <category>Hot</category>
+            </coffeeClass>
+        </input>
+        <expectedOutput>
+            <result>success</result>
+        </expectedOutput>
+        <timeout>30000</timeout>
+    </testCase>
+    
+    <!-- Test Case 4: High Price Coffee -->
+    <testCase name="testExpensiveCoffee" description="Test operation1 with high-priced coffee">
+        <input>
+            <coffeeClass>
+                <id>4</id>
+                <name>Premium Blend</name>
+                <description>Premium coffee blend from exotic locations</description>
+                <price>1200</price>
+                <category>Premium</category>
+            </coffeeClass>
+        </input>
+        <expectedOutput>
+            <result>success</result>
+        </expectedOutput>
+        <timeout>30000</timeout>
+    </testCase>
+    
+    <!-- Test Case 5: Service Availability Test -->
+    <testCase name="testServiceAvailability" description="Test that the service is available and responding">
+        <input>
+            <coffeeClass>
+                <id>999</id>
+                <name>Test Coffee</name>
+                <description>Test coffee for availability check</description>
+                <price>100</price>
+                <category>Test</category>
+            </coffeeClass>
+        </input>
+        <expectedOutput>
+            <result>success</result>
+        </expectedOutput>
+        <timeout>10000</timeout>
+    </testCase>
+    
+</testSuite>
