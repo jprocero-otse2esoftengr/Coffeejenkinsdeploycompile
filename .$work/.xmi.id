@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <UniqueIds>
+   <UniqueId id="_113896398"
+             original="../../../../../Program Files/MagicDraw/profiles/UML_Standard_Profile.mdzip"/>
    <UniqueId id="2071638018" original="BuilderUML.xml"/>
    <UniqueId id="E2E_PROCESS_TRACING"
              original="C:\Program Files\MagicDraw\modelLibraries\E2E Process Tracing.xml"/>
