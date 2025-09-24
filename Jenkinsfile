@@ -1,5 +1,3 @@
-#!groovy
-
 pipeline {
     agent any
 
@@ -7,15 +5,15 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '1'))
         disableConcurrentBuilds()
     }
-    
+
     environment {
         REGTEST_JAR = 'jarfiles/RegTestRunner-8.10.5.jar'
     }
-    
+
     triggers {
-        pollSCM('H/5 * * * *')  // Poll GitHub every 5 minutes
+        pollSCM('* * * * *')  // Poll GitHub every 1 minute
     }
-    
+
     parameters {
         choice(name: 'XUMLC', choices: ['jarfiles/xumlc-7.20.0.jar'], description: 'Location of the xUML Compiler')
         choice(name: 'REGTEST', choices: ['jarfiles/RegTestRunner-8.10.5.jar'], description: 'Location of the Regression Test Runner')
@@ -23,15 +21,28 @@ pipeline {
         string(name: 'BRIDGE_USER', defaultValue: 'jprocero', description: 'Bridge username')
         password(name: 'BRIDGE_PASSWORD', defaultValue: 'jprocero', description: 'Bridge password')
         string(name: 'BRIDGE_PORT', defaultValue: '11186', description: 'Bridge port')
-        string(name: 'CONTROL_PORT', defaultValue: '21190', description: 'Control port')
+        string(name: 'CONTROL_PORT', defaultValue: '21176', description: 'Control port')
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scmGit(
+                    branches: [[name: '*/master']],
+                    extensions: [],
+                    userRemoteConfigs: [[
+                        credentialsId: 'githubtoken',   // <-- make sure this matches your Jenkins credential ID
+                        url: 'https://github.com/jprocero-otse2esoftengr/CI-CD-DELIVERY-BRIDGE.git'
+                    ]]
+                )
+            }
+        }
+
         stage('Build') {
             steps {
                 dir('.') {
                     bat """
-                        java -jar ${XUMLC} -uml uml/BuilderUML.xml
+                        java -jar ${params.XUMLC} -uml uml/BuilderUML.xml
                         if errorlevel 1 exit /b 1
                         echo Build completed successfully
                         dir repository\\BuilderUML\\*.rep
@@ -40,79 +51,80 @@ pipeline {
                 }
             }
         }
+
         stage('Deploy') {
             steps {
                 dir('.') {
                     bat """
                         echo Checking for repository files...
-                       
-                        if not exist repository\\BuilderUML\\JenkinsCoffeeSoap.rep (
-                            echo ERROR: JenkinsCoffeeSoap.rep not found!
+                        if not exist repository\\BuilderUML\\regtestlatest.rep (
+                            echo ERROR: regtestlatest.rep not found!
                             exit /b 1
                         )
                          
                         echo All repository files found, starting deployment...
-                        npx e2e-bridge-cli deploy repository/BuilderUML/JenkinsCoffeeSoap.rep -h ${BRIDGE_HOST} -u ${BRIDGE_USER} -P ${BRIDGE_PASSWORD} -o overwrite
+                        npx e2e-bridge-cli deploy repository/BuilderUML/regtestlatest.rep -h ${params.BRIDGE_HOST} -u ${params.BRIDGE_USER} -P ${params.BRIDGE_PASSWORD} -p ${params.BRIDGE_PORT} -o overwrite
                         
+                        echo Configuring service port to match bridge port...
+                        npx e2e-bridge-cli settings regtestlatest set addOn_SEI_HTTP_Service_BuilderUMLService_Port ${params.BRIDGE_PORT} -h ${params.BRIDGE_HOST} -u ${params.BRIDGE_USER} -P ${params.BRIDGE_PASSWORD}
+                        
+                        echo Configuring control port...
+                        npx e2e-bridge-cli settings regtestlatest set global_e2e_configuration_controller_Port ${params.CONTROL_PORT} -h ${params.BRIDGE_HOST} -u ${params.BRIDGE_USER} -P ${params.BRIDGE_PASSWORD}
+                        
+                        echo Restarting service to apply configuration...
+                        npx e2e-bridge-cli stop regtestlatest -h ${params.BRIDGE_HOST} -u ${params.BRIDGE_USER} -P ${params.BRIDGE_PASSWORD}
+                        npx e2e-bridge-cli start regtestlatest -h ${params.BRIDGE_HOST} -u ${params.BRIDGE_USER} -P ${params.BRIDGE_PASSWORD}
                     """
                 }
             }
         }
+
+        stage('List Test Suites') {
+            steps {
+                dir('regressiontest') {
+                    bat """
+                        echo Listing available test suites...
+                        java -jar ${params.REGTEST} -project . -list
+                        echo.
+                        echo Checking project structure...
+                        dir /s testsuite
+                        echo.
+                        if exist testsuite\\testsuite.xml (
+                            echo testsuite.xml found
+                            type testsuite\\testsuite.xml | findstr "testcase"
+                        ) else (
+                            echo testsuite.xml not found
+                        )
+                    """
+                }
+            }
+        }
+
         stage('Test') {
             steps {
                 dir('.') {
                     bat """
                         echo Starting regression tests...
-                        echo Using RegTest jar: ${REGTEST_JAR}
-                        
-                        echo Checking if regtest jar exists...
-                        if not exist "${REGTEST_JAR}" (
-                            echo ERROR: RegTest jar not found at ${REGTEST_JAR}
+                        if not exist "${params.REGTEST}" (
+                            echo ERROR: RegTest jar not found at ${params.REGTEST}
                             exit /b 1
                         )
                         
-                        echo Checking if test cases exist...
-                        if not exist "testcase\\coffee_service_tests.xml" (
-                            echo ERROR: Test cases not found in testcase directory
-                            echo Please ensure testcase/coffee_service_tests.xml exists
+                        if not exist "regressiontest\\testsuite\\testsuite.xml" (
+                            echo ERROR: Test cases not found
                             exit /b 1
                         )
                         
-                        echo Starting regression tests...
-                        echo Test configuration:
-                        echo - Project: BuilderUML
-                        echo - Host: ${BRIDGE_HOST}
-                        echo - Port: ${BRIDGE_PORT}
-                        echo - Username: ${BRIDGE_USER}
-                        echo - Note: RegTestRunner will run all available test suites in the project
-                        
-                        echo.
                         echo Checking available test suites...
-                        java -jar "${REGTEST_JAR}" -project BuilderUML -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -list
+                        java -jar "${params.REGTEST}" -project . -host ${params.BRIDGE_HOST} -port ${params.BRIDGE_PORT} -username ${params.BRIDGE_USER} -password ${params.BRIDGE_PASSWORD} -list
                         
-                        echo.
-                        echo Running all available regression tests...
-                        java -jar "${REGTEST_JAR}" -project BuilderUML -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile result.xml
+                        echo Running all regression tests...
+                        java -jar "${params.REGTEST}" -project . -host ${params.BRIDGE_HOST} -port ${params.BRIDGE_PORT} -username ${params.BRIDGE_USER} -password ${params.BRIDGE_PASSWORD} -logfile regressiontest/result.xml
                         
-                        if errorlevel 1 (
-                            echo Tests completed with errors
-                            echo Checking result.xml for details...
-                            if exist result.xml (
-                                type result.xml
-                            )
-                            exit /b 1
-                        )
-                        
-                        echo Tests completed successfully
-                        echo Checking if result.xml was created...
-                        if exist result.xml (
-                            echo result.xml found, size:
-                            dir result.xml
-                            echo.
-                            echo Test results summary:
-                            type result.xml
+                        if exist regressiontest\\result.xml (
+                            type regressiontest\\result.xml
                         ) else (
-                            echo WARNING: result.xml not found
+                            echo ERROR: result.xml was not created!
                         )
                     """
                 }
@@ -120,52 +132,23 @@ pipeline {
             post {
                 always {
                     script {
-                        if (fileExists('result.xml')) {
-                            def resultContent = readFile('result.xml')
-                            echo "Processing test results..."
-                            
-                            // Check if we have actual test results
-                            if (resultContent.contains('tests="0"') || resultContent.contains('testsuite name=""')) {
-                                echo "No test results found in result.xml - this may indicate test configuration issues"
-                                echo "Result content: ${resultContent}"
-                                
-                                // Create a placeholder result for Jenkins reporting
-                                writeFile file: 'result.xml', text: '''<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-   <testsuite name="Coffee Service Regression Tests" tests="1" failures="0" errors="0" skipped="1">
-      <testcase name="TestConfigurationCheck" classname="RegressionTest">
-         <skipped message="Test configuration needs verification - check test cases and service deployment"/>
-      </testcase>
-   </testsuite>
-</testsuites>'''
-                            } else {
-                                echo "Test results found and processed successfully"
-                            }
-                            
-                            // Always publish results for Jenkins reporting
-                            junit 'result.xml'
-                            archiveArtifacts artifacts: 'result.xml'
-                            
-                            // Also archive test case files for debugging
-                            archiveArtifacts artifacts: 'testcase/**/*.xml'
-                            
+                        if (fileExists('regressiontest/result.xml')) {
+                            junit 'regressiontest/result.xml'
+                            archiveArtifacts artifacts: 'regressiontest/result.xml'
                         } else {
-                            echo "No test results file found - this indicates a test execution problem"
-                            // Create a failure result for Jenkins
-                            writeFile file: 'result.xml', text: '''<?xml version="1.0" encoding="UTF-8"?>
+                            writeFile file: 'regressiontest/result.xml', text: '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-   <testsuite name="Coffee Service Regression Tests" tests="1" failures="1" errors="0" skipped="0">
+   <testsuite name="BuilderUML Regression Tests" tests="1" failures="1" errors="0" skipped="0">
       <testcase name="TestExecutionFailure" classname="RegressionTest">
          <failure message="Test execution failed - result.xml was not generated"/>
       </testcase>
    </testsuite>
 </testsuites>'''
-                            junit 'result.xml'
+                            junit 'regressiontest/result.xml'
                         }
                     }
                 }
             }
         }
-
     }
 }
