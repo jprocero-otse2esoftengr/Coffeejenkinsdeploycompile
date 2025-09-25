@@ -1,3 +1,5 @@
+#!groovy
+
 pipeline {
     agent any
 
@@ -20,7 +22,7 @@ pipeline {
         string(name: 'BRIDGE_HOST', defaultValue: 'ec2-52-74-183-0.ap-southeast-1.compute.amazonaws.com', description: 'Bridge host address')
         string(name: 'BRIDGE_USER', defaultValue: 'jprocero', description: 'Bridge username')
         password(name: 'BRIDGE_PASSWORD', defaultValue: 'jprocero', description: 'Bridge password')
-        string(name: 'BRIDGE_PORT', defaultValue: '11186', description: 'Bridge port')
+        string(name: 'BRIDGE_PORT', defaultValue: '8080', description: 'Bridge port')
         string(name: 'CONTROL_PORT', defaultValue: '21190', description: 'Control port')
     }
 
@@ -76,15 +78,21 @@ pipeline {
                             exit /b 1
                         )
                         
-                        echo Test cases found, starting regression tests...
+                        echo Starting regression tests...
                         echo Test configuration:
                         echo - Project: BuilderUML
                         echo - Host: ${BRIDGE_HOST}
                         echo - Port: ${BRIDGE_PORT}
                         echo - Username: ${BRIDGE_USER}
-                        echo - Test cases: testcase/coffee_service_tests.xml
+                        echo - Note: RegTestRunner will run all available test suites in the project
                         
-                        java -jar "${REGTEST_JAR}" -project BuilderUML -suite "testcase/coffee_service_tests.xml" -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile result.xml
+                        echo.
+                        echo Checking available test suites...
+                        java -jar "${REGTEST_JAR}" -project BuilderUML -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -list
+                        
+                        echo.
+                        echo Running all available regression tests...
+                        java -jar "${REGTEST_JAR}" -project BuilderUML -host ${BRIDGE_HOST} -port ${BRIDGE_PORT} -username ${BRIDGE_USER} -password ${BRIDGE_PASSWORD} -logfile result.xml
                         
                         if errorlevel 1 (
                             echo Tests completed with errors
